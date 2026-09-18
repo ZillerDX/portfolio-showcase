@@ -1,7 +1,8 @@
-# Tanathon Chanapha — Systems Architect & Engineering Portfolio
+# Tanathon Chanapha — Personal Engineering Portfolio & Showcase Cockpit
 
 <div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-portfolio--tanathon.vercel.app-0070F3?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-tanathon.vercel.app)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
@@ -10,34 +11,40 @@
 [![Playwright](https://img.shields.io/badge/Verified_with-Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-**High-density, glassmorphic portfolio architecture showcasing enterprise cloud platforms, AST code analyzers, digital twins, and corporate certifications.**
+**Bespoke personal portfolio cockpit crafted for self-use (ทำใช้เอง) — showcasing enterprise cloud platforms, AST code analyzers, digital twins, and corporate accreditations.**
 
-[Live System Preview](#-live-demonstration--preview) • [Architectural Pillars](#-system-architecture) • [Engineering Showcase](#-selected-works-gallery) • [Local Setup](#-quickstart--local-development)
+[🌐 Live System Demo](https://portfolio-tanathon.vercel.app) • [Architectural Pillars](#-system-architecture) • [Engineering Showcase](#-selected-works-gallery) • [Local Setup](#-quickstart--local-development)
 
 </div>
 
 ---
 
-## 🏛️ 1. Who (Target Stakeholders)
+## 🏛️ 1. Who (Target Audience & Project Scope)
 
-- **Principal Engineers & Tech Leads**: Evaluating systems design mindset, code discipline, AST comprehension, and end-to-end full-stack capabilities.
-- **Engineering Hiring Managers & CTOs**: Reviewing enterprise-grade production applications (.NET 9, Angular 19, Next.js 14, WebGL2, TensorFlow.js).
-- **Recruiters & Talent Partners**: Accessing verified professional certifications (Krones AG Germany), interactive contact dialog, and verified resume artifacts.
-
----
-
-## ⚠️ 2. The Problem
-
-Traditional developer portfolios suffer from systemic weaknesses:
-1. **Shallow Toy Projects**: Superficial todo lists and clones that fail to demonstrate enterprise architecture, algorithmic rigor, or digital twin synchronization.
-2. **Cluttered & Inflexible Navigation**: Static pill lists and unstyled native `<select>` dropdowns that break responsiveness and create visual noise.
-3. **Disconnected Evidence**: Lack of auditable credentials, missing live application links, and opaque case studies without telemetry proofs.
+- **Primary Scope: Personal / Self-Use (ทำใช้เอง)**:
+  - Built by and for **Tanathon Chanapha** as a dedicated personal engineering cockpit and single-tenant portfolio hub.
+  - Designed for personal cataloging: tracking self-developed production systems, logging in-progress prototypes on local environments, and managing planned architectural milestones (such as migrating .NET 9 to .NET 10 LTS).
+  - Eliminates reliance on cookie-cutter SaaS templates (Wix, Notion, Linktree), providing 100% data ownership, zero subscription overhead, and bespoke instrument-grade UX.
+- **Secondary Stakeholders (Public Reviewers & Visitors)**:
+  - **Tech Leads & Principal Architects**: Evaluating systems design mindset, code discipline, AST comprehension, and end-to-end full-stack capabilities.
+  - **Engineering Hiring Managers & CTOs**: Reviewing enterprise-grade production applications (.NET 9, Angular 19, Next.js 14, WebGL2, TensorFlow.js).
+  - **Engineering Peers & Recruiters**: Accessing verified professional accreditations (Krones AG Germany), interactive contact dialog, and verified resume artifacts.
 
 ---
 
-## 💡 3. The Solution
+## ⚠️ 2. The Problem (Why Build a Personal System?)
 
-**Tanathon Chanapha Portfolio Platform** solves these challenges through a unified, instrument-grade architectural showcase:
+Commercial portfolio builders and generic website templates fail to meet specific engineering needs:
+1. **Generic Cookie-Cutter Layouts**: Standard site builders cannot represent multi-dimensional engineering taxonomies (.NET 9, Angular 19 Signals, WebGL2 shaders, AST telemetry) or interactive PDF modal inspection.
+2. **Cluttered & Inflexible Navigation**: Pre-made templates clutter screens with endless tag pills or clunky native selects that break on mobile and lack category/stack dual-filtering.
+3. **Lack of Zero-Config Self-Hosting**: Most platforms demand expensive SaaS subscriptions or inject branding, whereas a self-built Next.js + SQLite stack runs with zero overhead and full data control.
+
+---
+
+## 💡 3. The Solution (Personal Cockpit Architecture)
+
+**Tanathon Chanapha Personal Portfolio Platform** solves these challenges through a unified, instrument-grade personal architectural showcase:
+- **Personal Cataloging (ทำใช้เอง)**: Instant tracking of finished works, prototypes in active development, and upcoming technical migrations (e.g. .NET 10 LTS roadmap).
 - **7 Authentic Production Systems**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
 - **Dual Synchronized Filter Popovers**: "All Works" category dropdown and dynamic "All Tech Stacks" popover aligned on the same horizontal level, eliminating screen clutter while providing sub-second multi-dimensional filtering.
 - **Glassmorphic Instrument Design**: Built with modern CSS design tokens, custom SVG vector icons, dark/light ambient mesh gradients, and defensive UI UX (zero cumulative layout shifts).
@@ -167,13 +174,12 @@ npm run start
 
 ---
 
-## 🌐 10. Deployment Guide (Vercel)
+## 🌐 10. Deployment & Live Production (Vercel)
 
-This application is built with **Next.js 14 App Router** and **Prisma SQLite**. It is optimized for zero-configuration 1-click deployment on **Vercel**:
+This application is built with **Next.js 14 App Router** and **Prisma SQLite**, optimized for high-performance deployment on **Vercel** with full Static Site Generation (SSG) and Incremental Static Regeneration (ISR):
 
-1. Push your repository to GitHub: `https://github.com/ZillerDX/portfolio-showcase`
-2. Import the repository into [Vercel](https://vercel.com/new).
-3. Vercel automatically detects Next.js, executes `prisma generate && next build`, and provisions the production preview.
+- **Production Live URL**: [https://portfolio-tanathon.vercel.app](https://portfolio-tanathon.vercel.app)
+- **Continuous Deployment**: Connected to `main` branch on GitHub; every push triggers automatic build verification and Edge CDN caching.
 
 ---
 
