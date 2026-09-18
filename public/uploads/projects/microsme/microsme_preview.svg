@@ -1,0 +1,81 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="750" fill="url(#bg)" />
+  <circle cx="200" cy="150" r="280" fill="#0284c7" opacity="0.12" filter="url(#glow)" />
+  <circle cx="1000" cy="600" r="320" fill="#4f46e5" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Grid mesh pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <path d="M 0 150 L 1200 150 M 0 300 L 1200 300 M 0 450 L 1200 450 M 0 600 L 1200 600" />
+    <path d="M 200 0 L 200 750 M 400 0 L 400 750 M 600 0 L 600 750 M 800 0 L 800 750 M 1000 0 L 1000 750" />
+  </g>
+
+  <!-- Center Card Terminal / POS Dashboard Container -->
+  <rect x="150" y="100" width="900" height="550" rx="28" fill="#0f172a" stroke="#334155" stroke-width="2" opacity="0.9" />
+
+  <!-- Top Window Controls -->
+  <circle cx="190" cy="140" r="7" fill="#ef4444" />
+  <circle cx="215" cy="140" r="7" fill="#f59e0b" />
+  <circle cx="240" cy="140" r="7" fill="#10b981" />
+  <text x="270" y="145" fill="#64748b" font-family="monospace" font-size="14">MicroSME Enterprise POS &bull; Flutter 3.24 &bull; SQLite Local Cache</text>
+
+  <!-- Left Sidebar / Navigation -->
+  <rect x="150" y="170" width="220" height="480" fill="#090d16" rx="0" />
+  <rect x="175" y="210" width="170" height="44" rx="10" fill="#1e293b" />
+  <text x="220" y="238" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="15">Dashboard</text>
+  <rect x="175" y="270" width="170" height="44" rx="10" fill="transparent" />
+  <text x="220" y="298" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">POS Register</text>
+  <rect x="175" y="330" width="170" height="44" rx="10" fill="transparent" />
+  <text x="220" y="358" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">Inventory</text>
+  <rect x="175" y="390" width="170" height="44" rx="10" fill="transparent" />
+  <text x="220" y="418" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">Analytics</text>
+  <rect x="175" y="450" width="170" height="44" rx="10" fill="transparent" />
+  <text x="220" y="478" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="15">Settings</text>
+
+  <!-- Metric Cards in Main Area -->
+  <rect x="400" y="200" width="190" height="110" rx="16" fill="#1e293b" stroke="#334155" />
+  <text x="420" y="235" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Today's Revenue</text>
+  <text x="420" y="275" fill="#38bdf8" font-family="monospace" font-weight="bold" font-size="26">฿48,920</text>
+
+  <rect x="610" y="200" width="190" height="110" rx="16" fill="#1e293b" stroke="#334155" />
+  <text x="630" y="235" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Total Orders</text>
+  <text x="630" y="275" fill="#10b981" font-family="monospace" font-weight="bold" font-size="26">342 Tx</text>
+
+  <rect x="820" y="200" width="190" height="110" rx="16" fill="#1e293b" stroke="#334155" />
+  <text x="840" y="235" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13">Active SKUs</text>
+  <text x="840" y="275" fill="#818cf8" font-family="monospace" font-weight="bold" font-size="26">1,480</text>
+
+  <!-- Main Chart or Grid Area -->
+  <rect x="400" y="335" width="610" height="280" rx="18" fill="#1e293b" stroke="#334155" />
+  <text x="430" y="375" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="16">Hourly Shift Velocity (Offline SQLite Synced)</text>
+  
+  <!-- Line Chart Simulation -->
+  <path d="M 440 550 C 490 520, 540 540, 590 480 C 640 420, 690 490, 740 430 C 790 370, 840 400, 890 390 C 940 380, 970 410, 970 410" fill="none" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round" />
+  <circle cx="590" cy="480" r="5" fill="#38bdf8" />
+  <circle cx="740" cy="430" r="5" fill="#38bdf8" />
+  <circle cx="890" cy="390" r="5" fill="#818cf8" />
+
+  <!-- Badge at Top Right -->
+  <rect x="850" y="125" width="160" height="32" rx="8" fill="#0284c7" fill-opacity="0.2" stroke="#0284c7" stroke-width="1" />
+  <text x="870" y="146" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="600" font-size="12">&bull; Local SQLite Cache</text>
+</svg>

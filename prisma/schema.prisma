@@ -1,0 +1,90 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Profile {
+  id               String   @id @default("default")
+  name             String   @default("Alex Chen")
+  title            String   @default("Senior Full-Stack & UI Systems Engineer")
+  bio              String   @default("Crafting high-precision web applications, design systems, and cloud architectures.")
+  avatarUrl        String   @default("/uploads/images/avatar-default.png")
+  resumePdfUrl     String   @default("/uploads/documents/sample-resume.pdf")
+  availableForWork Boolean  @default(true)
+  availabilityText String   @default("Available for new projects")
+  contactEmail     String   @default("alex.chen.engineer@example.com")
+  githubUrl        String   @default("https://github.com")
+  linkedinUrl      String   @default("https://linkedin.com")
+  twitterUrl       String   @default("https://twitter.com")
+  location         String   @default("Bangkok, Thailand (UTC+7)")
+  skillsJson       String   @default("[]")
+  updatedAt        DateTime @updatedAt
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  sortOrder Int       @default(0)
+  projects  Project[]
+}
+
+model Project {
+  id              String         @id @default(cuid())
+  slug            String         @unique
+  title           String
+  summary         String
+  contentMarkdown String
+  coverImage      String
+  pdfFile         String?
+  categoryId      String
+  category        Category       @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  tagsJson        String         @default("[]")
+  isFeatured      Boolean        @default(false)
+  isPublished     Boolean        @default(true)
+  sortOrder       Int            @default(0)
+  projectDate     String?
+  images          ProjectImage[]
+  links           ProjectLink[]
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+}
+
+model ProjectImage {
+  id        String   @id @default(cuid())
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  imageUrl  String
+  caption   String?
+  sortOrder Int      @default(0)
+}
+
+model ProjectLink {
+  id        String  @id @default(cuid())
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  label     String
+  url       String
+  type      String
+}
+
+model Certificate {
+  id            String   @id @default(cuid())
+  title         String
+  issuer        String
+  issueDate     String
+  expiryDate    String?
+  credentialId  String?
+  credentialUrl String?
+  description   String
+  skillsJson    String   @default("[]")
+  fileUrl       String?
+  sortOrder     Int      @default(0)
+  isFeatured    Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
