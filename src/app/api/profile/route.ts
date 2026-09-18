@@ -9,23 +9,21 @@ export async function GET() {
     });
 
     if (!profile) {
-      profile = await db.profile.create({
-        data: {
-          id: "default",
-          name: "Tanathon Chanapha",
-          title: "Full-Stack & Systems Architect | Software Engineer",
-          bio: "Engineering high-performance enterprise systems, autonomous AI agents, digital twin platforms, and modern web architectures with disciplined software craft.",
-          avatarUrl: "/uploads/images/avatar.png",
-          resumePdfUrl: "/uploads/documents/alex-chen-resume.pdf",
-          availableForWork: true,
-          availabilityText: "Open to high-impact software engineering & architecture opportunities",
-          contactEmail: "bostziller03x@gmail.com",
-          githubUrl: "https://github.com/ZillerDX",
-          linkedinUrl: "https://www.linkedin.com/in/tanathon-chanapha-452177427",
-          twitterUrl: "https://th.jobsdb.com/th/profiles/tanathon-chanapha-R26rW062z5",
-          location: "Bangkok, Thailand (UTC+7)",
-          skillsJson: JSON.stringify([]),
-        },
+      return NextResponse.json({
+        id: "default",
+        name: "Tanathon Chanapha",
+        title: "Full-Stack & Systems Architect | Software Engineer",
+        bio: "Engineering high-performance enterprise systems, autonomous AI agents, digital twin platforms, and modern web architectures with disciplined software craft.",
+        avatarUrl: "/uploads/images/avatar.png",
+        resumePdfUrl: "/uploads/documents/tanathon-chanapha-resume.pdf",
+        availableForWork: true,
+        availabilityText: "Available for high-impact software engineering & architecture opportunities",
+        contactEmail: "chanapha.tanathon@gmail.com",
+        githubUrl: "https://github.com/ZillerDX",
+        linkedinUrl: "https://www.linkedin.com/in/tanathon-chanapha-452177427",
+        twitterUrl: "https://th.jobsdb.com/th/profiles/tanathon-chanapha-R26rW062z5",
+        location: "Bangkok, Thailand (UTC+7)",
+        skillsJson: JSON.stringify([]),
       });
     }
 

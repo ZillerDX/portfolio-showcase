@@ -16,34 +16,54 @@ import {
   FileText,
 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  try {
+    const projects = await db.project.findMany({
+      where: { isPublished: true },
+      select: { slug: true },
+    });
+    return projects.map((p) => ({ slug: p.slug }));
+  } catch (e) {
+    console.error("generateStaticParams failed:", e);
+    return [];
+  }
+}
 
 export default async function ProjectDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const project = await db.project.findFirst({
-    where: {
-      slug: params.slug,
-      isPublished: true,
-    },
-    include: {
-      category: true,
-      images: {
-        orderBy: { sortOrder: "asc" },
+  let project = null;
+  let profile = null;
+
+  try {
+    project = await db.project.findFirst({
+      where: {
+        slug: params.slug,
+        isPublished: true,
       },
-      links: true,
-    },
-  });
+      include: {
+        category: true,
+        images: {
+          orderBy: { sortOrder: "asc" },
+        },
+        links: true,
+      },
+    });
+
+    profile = await db.profile.findUnique({
+      where: { id: "default" },
+    });
+  } catch (error) {
+    console.error("Error fetching project detail:", error);
+  }
 
   if (!project) {
     notFound();
   }
-
-  const profile = await db.profile.findUnique({
-    where: { id: "default" },
-  });
 
   let tags: string[] = [];
   try {
