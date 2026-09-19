@@ -52,7 +52,7 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
             {/* Subtle top-right badge */}
             <div className="absolute top-4 right-4 hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10 text-xs font-mono text-zinc-300">
               <span className="size-1.5 rounded-full bg-blue-400 animate-pulse" />
-              <span>Bangkok, TH • Architecture</span>
+              <span>Bangkok, TH</span>
             </div>
           </div>
 
@@ -68,15 +68,6 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Live Availability Beacon */}
-                {profile.availableForWork && (
-                  <span
-                    title="Open to Work"
-                    className="absolute bottom-1 right-1 size-5 rounded-full bg-emerald-500 border-2 border-white dark:border-zinc-900 flex items-center justify-center shadow-xs"
-                  >
-                    <span className="size-2 rounded-full bg-white animate-pulse" />
-                  </span>
-                )}
               </div>
 
               {/* Action Buttons Top Right */}
