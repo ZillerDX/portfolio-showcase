@@ -98,11 +98,6 @@ export default async function ProjectDetailPage({
                 {project.category.name}
               </Badge>
             )}
-            {project.isFeatured && (
-              <Badge variant="warning" size="sm">
-                Featured System
-              </Badge>
-            )}
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
             {project.title}

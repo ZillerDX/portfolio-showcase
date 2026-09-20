@@ -53,12 +53,6 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
               {project.category.name}
             </span>
           )}
-          {project.isFeatured && (
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25">
-              <Sparkles className="size-3 shrink-0" />
-              <span>Featured</span>
-            </span>
-          )}
           <span className="font-bold text-zinc-900 dark:text-zinc-100 truncate font-heading text-sm sm:text-base">
             {project.title}
           </span>
