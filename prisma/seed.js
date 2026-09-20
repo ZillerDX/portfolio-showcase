@@ -142,7 +142,6 @@ Deployment Pipeline      Vercel (Frontend Edge) + Railway (Containerized .NET 10
         create: [
           { label: "Live Demo (Vercel)", url: "https://deskflow-three-mauve.vercel.app/", type: "live" },
           { label: "GitHub Repository", url: "https://github.com/ZillerDX/deskflow", type: "github" },
-          { label: "Backend API (Railway)", url: "https://deskflow-production-5f78.up.railway.app/api/floors", type: "api" },
         ],
       },
       images: {
