@@ -8,25 +8,29 @@ const globalForPrisma = globalThis as unknown as {
 };
 
 function getDatabaseUrl(): string {
-  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME || process.env.NODE_ENV === "production") {
+  if (process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME) {
     const tmpDbPath = path.join(os.tmpdir(), "dev.db");
-    
-    if (!fs.existsSync(tmpDbPath)) {
-      const candidates = [
-        path.resolve(process.cwd(), "prisma", "dev.db"),
-        path.join(process.cwd(), "prisma", "dev.db"),
-        path.join(process.cwd(), "dev.db"),
-        path.resolve("./prisma/dev.db"),
-      ];
+    const sourceDb = path.resolve(process.cwd(), "prisma", "dev.db");
 
-      for (const candidate of candidates) {
-        if (fs.existsSync(candidate)) {
-          try {
-            fs.copyFileSync(candidate, tmpDbPath);
-            break;
-          } catch (e) {
-            console.warn("Could not copy sqlite db to temp dir:", e);
+    if (fs.existsSync(sourceDb)) {
+      let needsCopy = !fs.existsSync(tmpDbPath);
+      if (!needsCopy) {
+        try {
+          const srcStat = fs.statSync(sourceDb);
+          const tmpStat = fs.statSync(tmpDbPath);
+          if (srcStat.mtimeMs > tmpStat.mtimeMs || srcStat.size !== tmpStat.size) {
+            needsCopy = true;
           }
+        } catch {
+          needsCopy = true;
+        }
+      }
+
+      if (needsCopy) {
+        try {
+          fs.copyFileSync(sourceDb, tmpDbPath);
+        } catch (e) {
+          console.warn("Could not copy sqlite db to temp dir:", e);
         }
       }
     }

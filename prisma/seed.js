@@ -97,7 +97,67 @@ async function main() {
   });
 
   // 4. Seed Projects
-  // Project 1: OptiTrack WMS (Flagship Project)
+  // Project 1: DeskFlow Rooms
+  const pDeskflow = await prisma.project.create({
+    data: {
+      title: "DeskFlow Rooms — Enterprise Workplace Collaboration & Meeting Operating System",
+      slug: "deskflow",
+      summary: "High-performance real-time meeting room reservation and workplace facility system for hybrid enterprises, engineered with .NET 10 LTS Minimal APIs, Angular 21 Standalone Signals, and SignalR WebSockets bi-directional attendance synchronization.",
+      categoryId: catEnterprise.id,
+      coverImage: "/uploads/projects/deskflow/overview.png",
+      tagsJson: JSON.stringify([".NET 10 LTS", "C# 14", "Angular 21", "SignalR", "WebSockets", "EF Core", "Tailwind CSS"]),
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 1,
+      projectDate: "2026-09",
+      contentMarkdown: `## Executive Overview
+
+**DeskFlow Rooms** is an enterprise workplace collaboration and meeting room operating system engineered for modern hybrid enterprises. The system addresses ghost bookings, meeting quorum opacity, and multi-floor corporate tower navigation through sub-second bi-directional attendance synchronization and lightweight facility governance.
+
+Built with **.NET 10 LTS (C# 14 Minimal APIs)** on the backend and **Angular 21 (Signals & Standalone Single-File Components)** on the frontend, DeskFlow demonstrates disciplined modern full-stack software craftsmanship with zero component sprawl.
+
+---
+
+## Architectural Pillars
+
+\`\`\`
+Client Architecture      Angular 21 Standalone SFC + Signals State + Tailwind CSS
+Real-Time Engine         ASP.NET Core SignalR WebSockets (Bi-directional Broadcasting)
+Backend Framework        .NET 10 LTS Minimal APIs + C# 14 (Native OpenAPI 3.1)
+Data Persistence         Entity Framework Core + SQLite / PostgreSQL (Relational Integrity)
+Deployment Pipeline      Vercel (Frontend Edge) + Railway (Containerized .NET 10 API)
+\`\`\`
+
+### 1. High-Precision State Management with Angular Signals
+- **Zero RxJS Memory Leaks**: Utilizes fine-grained Angular \`signal\`, \`computed\`, and \`effect\` primitives for reactive room availability and attendee counts.
+- **Single-File Standalone Components (SFC)**: Unified component structure combining HTML templates, SCSS tokens, and TypeScript logic in streamlined single-file modules.
+- **Defensive UI/UX**: Zero layout shifts with skeleton placeholders, semantic vector icons, and instant visual state transitions.
+
+### 2. .NET 10 LTS & C# 14 Minimal APIs
+- **Token-Lean Backend**: Highly concise, single-file endpoint mapping avoiding 15-file controller boilerplate.
+- **C# 14 Features**: Leverages modern C# 14 field-backed properties and native OpenAPI 3.1 documentation endpoints.
+- **ASP.NET Core SignalR**: Broadcasts real-time room reservations, RSVP responses, cancellations, and floor mutations across all active clients in sub-50ms latency.
+`,
+      links: {
+        create: [
+          { label: "Live Demo (Vercel)", url: "https://deskflow-three-mauve.vercel.app/", type: "live" },
+          { label: "GitHub Repository", url: "https://github.com/ZillerDX/deskflow", type: "github" },
+          { label: "Backend API (Railway)", url: "https://deskflow-production-5f78.up.railway.app/api/floors", type: "api" },
+        ],
+      },
+      images: {
+        create: [
+          { imageUrl: "/uploads/projects/deskflow/overview.png", caption: "DeskFlow Rooms Executive Dashboard & Live Attendance Status", sortOrder: 1 },
+          { imageUrl: "/uploads/projects/deskflow/employee-view.png", caption: "Employee Persona Perspective & 1-Click Meeting RSVP Workflow", sortOrder: 2 },
+          { imageUrl: "/uploads/projects/deskflow/rsvp-accepted.png", caption: "Real-Time Bi-Directional RSVP Status Synchronization via SignalR", sortOrder: 3 },
+          { imageUrl: "/uploads/projects/deskflow/manage-floors.png", caption: "Multi-Floor Facility Administration & Conflict Governance", sortOrder: 4 },
+          { imageUrl: "/uploads/projects/deskflow/add-room.png", caption: "Room Specifications, Seat Quota & Hardware Provisioning Modal", sortOrder: 5 },
+        ],
+      },
+    },
+  });
+
+  // Project 2: OptiTrack WMS (Flagship Project)
   const pOptitrack = await prisma.project.create({
     data: {
       title: "OptiTrack WMS — Intelligent Warehouse Management System & Digital Twin",

@@ -45,7 +45,7 @@ Commercial portfolio builders and generic website templates fail to meet specifi
 
 **Tanathon Chanapha Personal Portfolio Platform** solves these challenges through a unified, instrument-grade personal architectural showcase:
 - **Personal Cataloging (ทำใช้เอง)**: Instant tracking of finished works, prototypes in active development, and upcoming technical migrations (e.g. .NET 10 LTS roadmap).
-- **7 Authentic Production Systems**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
+- **8 Authentic Production Systems**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
 - **Dual Synchronized Filter Popovers**: "All Works" category dropdown and dynamic "All Tech Stacks" popover aligned on the same horizontal level, eliminating screen clutter while providing sub-second multi-dimensional filtering.
 - **Glassmorphic Instrument Design**: Built with modern CSS design tokens, custom SVG vector icons, dark/light ambient mesh gradients, and defensive UI UX (zero cumulative layout shifts).
 
@@ -126,6 +126,7 @@ flowchart TD
 
 | Project | Domain | Key Architecture & Tech Stack | Live Demo / Repository |
 | :--- | :--- | :--- | :--- |
+| **DeskFlow Rooms** | Enterprise Systems | .NET 10 LTS, C# 14 Minimal APIs, Angular 21 Signals, SignalR WebSockets | [Live App](https://deskflow-three-mauve.vercel.app/) • [GitHub](https://github.com/ZillerDX/deskflow) |
 | **OptiTrack WMS** | Enterprise Systems | Next.js 14, TypeScript, FastAPI, Python, 2D/3D SCADA Digital Twin | [Live App](https://optitrack-wms.vercel.app) • [GitHub](https://github.com/ZillerDX/Optitrack-WMS) |
 | **CodePulse** | AI & Data Platforms | .NET 9 Minimal APIs, Angular 19 Standalone Signals, AST Telemetry | [Live System](https://zillerdx.github.io/ai-codebase-intelligence/) • [GitHub](https://github.com/ZillerDX/ai-codebase-intelligence) |
 | **AI Document Workflow** | Enterprise Systems | .NET 9, Angular 19, WebCrypto SHA-256 Cryptographic Audit Chaining | [Live System](https://zillerdx.github.io/ai-document-workflow/) • [GitHub](https://github.com/ZillerDX/ai-document-workflow) |
