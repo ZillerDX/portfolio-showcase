@@ -178,6 +178,7 @@ export function ShowcaseClient({
 
       {/* Project Detail Modal & PDF Viewer */}
       <ProjectDetailModal
+        key={activeProject?.id || "none"}
         project={activeProject}
         onClose={() => setActiveProject(null)}
       />

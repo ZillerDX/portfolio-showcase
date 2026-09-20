@@ -27,6 +27,14 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
   const [activeTab, setActiveTab] = useState<"overview" | "gallery">("overview");
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
+  // Always reset to Case Study & Specs whenever a project modal opens
+  React.useEffect(() => {
+    if (project) {
+      setActiveTab("overview");
+      setActiveImageIndex(0);
+    }
+  }, [project]);
+
   if (!project) return null;
 
   let tags: string[] = [];

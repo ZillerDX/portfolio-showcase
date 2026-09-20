@@ -157,7 +157,65 @@ Deployment Pipeline      Vercel (Frontend Edge) + Railway (Containerized .NET 10
     },
   });
 
-  // Project 2: OptiTrack WMS (Flagship Project)
+  // Project 2: EquipLend (Enterprise Hardware Checkout System)
+  const pEquiplend = await prisma.project.create({
+    data: {
+      title: "EquipLend — Internal Device & IT Asset Checkout Kiosk",
+      slug: "equiplend",
+      summary: "High-efficiency workplace hardware custody platform engineered with .NET 10 LTS Minimal APIs, React 19, and Tailwind CSS tokens, featuring automated 09:00 AM overdue notifications, screen-centered date pickers, and tamper-evident IT operations logs.",
+      categoryId: catEnterprise.id,
+      coverImage: "/uploads/projects/equiplend/hero-preview.png",
+      tagsJson: JSON.stringify([".NET 10 LTS", "C# 14", "React 19", "Tailwind CSS", "Minimal APIs", "EF Core", "Bilingual i18n"]),
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 2,
+      projectDate: "2026-09",
+      contentMarkdown: `## Executive Overview
+
+**EquipLend** is an internal workplace hardware lending and IT asset checkout kiosk engineered to eradicate asset drift, untracked peer-to-peer hardware handovers, and manual inventory follow-ups in engineering and corporate offices.
+
+Built with **.NET 10 LTS (C# 14 Minimal APIs)** on the backend and **React 19 + Tailwind CSS tokens** on the frontend, EquipLend delivers a friction-free self-service hardware catalog with automated morning overdue recovery and role-segregated IT administrative audit trails.
+
+---
+
+## Architectural Pillars
+
+\`\`\`
+Client Architecture      React 19 + Tailwind CSS Tokens (Vercel Edge Deployment)
+Backend Framework        .NET 10 LTS Minimal APIs + C# 14 (Railway Cloud)
+Autonomous Worker        C# BackgroundService (09:00 AM Overdue Scheduler)
+Data Persistence         Entity Framework Core + SQLite / PostgreSQL Relational Storage
+Localization Engine      Bilingual Reactive Engine (English & ภาษาไทย)
+\`\`\`
+
+### 1. Zero-Training Self-Service UX
+- **Intuitive Hardware Catalog**: Instant category categorization (Laptops, Mobile Test Devices, Monitors & Docks, Adapters & Cables, XR/VR R&D, Tablets) with live text search.
+- **Visual Availability Badging**: Real-time status indicators (\`Available\` with emerald vector indicator, \`In Use\` with high-contrast red indicator).
+- **Return to Central IT Governance**: Enforces physical hardware inspection at the central IT hub before re-issuance, safely preserving chain-of-custody.
+
+### 2. .NET 10 LTS Backend & Background Automation
+- **Autonomous Overdue Scheduler**: Integrated .NET 10 \`BackgroundService\` scans borrow ledgers every morning at 09:00 AM, automatically triggering overdue alerts and webhook dispatches.
+- **IT Operations & Audit Trail**: Chronological event ledger recording every action (\`BORROW\`, \`RETURN\`, \`WATCHLIST_SUBSCRIBED\`, \`ADMIN_CREATE_DEVICE\`, \`ADMIN_UPDATE_DEVICE\`, \`ADMIN_DELETE_DEVICE\`).
+- **Screen-Centered Date Picker**: Custom-built modal calendar with instant duration presets (1 Day, 3 Days, 1 Week, 2 Weeks) and affirmative confirmation.
+`,
+      links: {
+        create: [
+          { label: "Live Demo (Vercel)", url: "https://equiplend.vercel.app/", type: "live" },
+          { label: "GitHub Repository", url: "https://github.com/ZillerDX/equiplend", type: "github" },
+        ],
+      },
+      images: {
+        create: [
+          { imageUrl: "/uploads/projects/equiplend/hero-preview.png", caption: "EquipLend Equipment Catalog & Modern Kiosk Interface", sortOrder: 1 },
+          { imageUrl: "/uploads/projects/equiplend/datepicker-preview.png", caption: "Screen-Centered Modern Date Picker Modal with Quick Presets", sortOrder: 2 },
+          { imageUrl: "/uploads/projects/equiplend/admin-preview.png", caption: "IT Administrator Console & Operations Audit Ledger", sortOrder: 3 },
+          { imageUrl: "/uploads/projects/equiplend/logo.png", caption: "EquipLend Internal IT Asset Kiosk Brand Emblem", sortOrder: 4 },
+        ],
+      },
+    },
+  });
+
+  // Project 3: OptiTrack WMS (Flagship Project)
   const pOptitrack = await prisma.project.create({
     data: {
       title: "OptiTrack WMS — Intelligent Warehouse Management System & Digital Twin",
