@@ -213,12 +213,6 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
                     <li className="flex items-start gap-2">
                       <span className="text-blue-500 dark:text-blue-400 mt-0.5 shrink-0 font-bold">•</span>
                       <span>
-                        <strong className="font-semibold text-zinc-900 dark:text-zinc-100">.NET 10 LTS Migration:</strong> .NET 9 codebases are scheduled for migration to .NET 10 soon; actively researching and preparing the upgrade roadmap.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 dark:text-blue-400 mt-0.5 shrink-0 font-bold">•</span>
-                      <span>
                         <strong className="font-semibold text-zinc-900 dark:text-zinc-100">Continuous Growth:</strong> Continuously assimilating new technologies, eager to share architectural ideas, and always welcoming constructive feedback.
                       </span>
                     </li>
