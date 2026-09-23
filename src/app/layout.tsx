@@ -20,6 +20,14 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Tanathon Chanapha — Full-Stack & Systems Architect",
   description: "Personal portfolio and engineering showcase featuring enterprise platforms, intelligent warehouse systems, AI workflows, and digital twins.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
