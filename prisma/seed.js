@@ -29,8 +29,8 @@ async function main() {
     {
       category: "Backend & Distributed Systems",
       skills: [
-        { name: ".NET 9 Minimal APIs" },
-        { name: "C#" },
+        { name: ".NET 10 Minimal APIs" },
+        { name: "C# 14" },
         { name: "Node.js & Express" },
         { name: "Python & FastAPI" },
         { name: "Go (Golang)" },
@@ -97,7 +97,72 @@ async function main() {
   });
 
   // 4. Seed Projects
-  // Project 1: DeskFlow Rooms
+  // Project 1: QueueFlow
+  const pQueueflow = await prisma.project.create({
+    data: {
+      title: "QueueFlow — Enterprise Real-Time Distributed Queue Management System",
+      slug: "queueflow",
+      summary: "High-throughput real-time distributed queue management and counter dispatch platform engineered with .NET 10 LTS Minimal APIs, Angular 19 Standalone Signals, SignalR WebSockets, and PostgreSQL SKIP LOCKED pessimistic concurrency.",
+      categoryId: catEnterprise.id,
+      coverImage: "/uploads/projects/queueflow/preview.png",
+      tagsJson: JSON.stringify([".NET 10", "C# 14", "Angular 19", "SignalR", "PostgreSQL", "WebSockets", "Tailwind CSS", "PWA"]),
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 1,
+      projectDate: "2026-09",
+      contentMarkdown: `## Executive Overview
+
+**QueueFlow** is an enterprise-grade distributed real-time queue and service counter management platform engineered for multi-branch organizations (clinics, banking halls, service centers, and public sector offices). It eliminates waiting room congestion, human triage delays, and ticket collisions through synchronized digital queue tracking.
+
+Built with **.NET 10 LTS (C# 14 Minimal APIs)** on the backend and **Angular 19 (Signals & Standalone Single-File Components)** on the frontend, QueueFlow showcases high-concurrency architecture with PostgreSQL row-level locks and sub-millisecond SignalR WebSocket broadcasts.
+
+---
+
+## Architectural Pillars
+
+\`\`\`
+Client Architecture      Angular 19 Standalone SFC + Signals State + Tailwind CSS v4 (PWA)
+Real-Time Engine         ASP.NET Core SignalR WebSockets + BroadcastChannel Event Stream
+Backend Framework        .NET 10 LTS Minimal APIs + C# 14 (Native OpenAPI 3.1)
+Concurrency Control      PostgreSQL 18 (SELECT ... FOR UPDATE SKIP LOCKED)
+Data Persistence         Entity Framework Core + PostgreSQL Relational Storage
+Deployment Pipeline      Vercel Edge (Frontend PWA) + Docker Container (.NET 10 API)
+\`\`\`
+
+### 1. Zero-Friction Mobile Intake & Live Digital Pass
+- **Scan & Join**: Customers scan dynamic counter QR codes to join queues with zero app downloads or account creation.
+- **Real-Time Tracker**: Sub-second position countdown, estimated wait times (EWT), and turn-alert notifications via WebSockets.
+- **Print-Ready QR Standees**: In-app generation of A4 tent standees and counter signage for triage desks.
+
+### 2. Double-Call Race Condition Immunity (SKIP LOCKED)
+- High-velocity service centers with multiple tellers clicking "Call Next" simultaneously are protected at the database engine level via PostgreSQL \`SELECT ... FOR UPDATE SKIP LOCKED\`.
+- Ensures absolute mutual exclusion with zero duplicate ticket assignments across concurrent counter requests.
+
+### 3. TV Signage & Multi-Desk Staff Terminals
+- **16:9 Public Display**: Live board with bilingual audio chimes (Web Audio API & Web Speech API) in Thai and English.
+- **Staff Operations Terminal**: One-click ticket calling, recalls, transfers, no-show flagging, and multi-service bindings.
+- **Branch Management**: Centralized counter assignment, service letter prefix configuration (A/B/C), and throughput analytics.
+`,
+      links: {
+        create: [
+          { label: "Live Demo (Vercel)", url: "https://queueflow-wheat.vercel.app", type: "live" },
+          { label: "GitHub Repository", url: "https://github.com/ZillerDX/QueueFlow", type: "github" },
+        ],
+      },
+      images: {
+        create: [
+          { imageUrl: "/uploads/projects/queueflow/preview.png", caption: "QueueFlow Customer Intake Portal & Instant Mobile Pass", sortOrder: 1 },
+          { imageUrl: "/uploads/projects/queueflow/ticket-tracker.png", caption: "Real-Time Digital Ticket Tracker & Position Countdown", sortOrder: 2 },
+          { imageUrl: "/uploads/projects/queueflow/staff-terminal.png", caption: "Multi-Desk Staff Service Terminal & Atomic Queue Calling", sortOrder: 3 },
+          { imageUrl: "/uploads/projects/queueflow/tv-display.png", caption: "16:9 Public TV Digital Signage with Real-Time Audio Chime", sortOrder: 4 },
+          { imageUrl: "/uploads/projects/queueflow/admin-management.png", caption: "Branch Counter Configuration & Service Desk Management", sortOrder: 5 },
+          { imageUrl: "/uploads/projects/queueflow/qr-standee-modal.png", caption: "Print-Ready A4 Desk Standee & Entrance QR Generator", sortOrder: 6 },
+        ],
+      },
+    },
+  });
+
+  // Project 2: DeskFlow Rooms
   const pDeskflow = await prisma.project.create({
     data: {
       title: "DeskFlow Rooms — Enterprise Workplace Collaboration & Meeting Operating System",
@@ -105,10 +170,10 @@ async function main() {
       summary: "High-performance real-time meeting room reservation and workplace facility system for hybrid enterprises, engineered with .NET 10 LTS Minimal APIs, Angular 21 Standalone Signals, and SignalR WebSockets bi-directional attendance synchronization.",
       categoryId: catEnterprise.id,
       coverImage: "/uploads/projects/deskflow/overview.png",
-      tagsJson: JSON.stringify([".NET 10 LTS", "C# 14", "Angular 21", "SignalR", "WebSockets", "EF Core", "Tailwind CSS"]),
+      tagsJson: JSON.stringify([".NET 10", "C# 14", "Angular 21", "SignalR", "WebSockets", "EF Core", "Tailwind CSS"]),
       isFeatured: true,
       isPublished: true,
-      sortOrder: 1,
+      sortOrder: 2,
       projectDate: "2026-09",
       contentMarkdown: `## Executive Overview
 
@@ -156,7 +221,7 @@ Deployment Pipeline      Vercel (Frontend Edge) + Railway (Containerized .NET 10
     },
   });
 
-  // Project 2: EquipLend (Enterprise Hardware Checkout System)
+  // Project 3: EquipLend (Enterprise Hardware Checkout System)
   const pEquiplend = await prisma.project.create({
     data: {
       title: "EquipLend — Internal Device & IT Asset Checkout Kiosk",
@@ -164,10 +229,10 @@ Deployment Pipeline      Vercel (Frontend Edge) + Railway (Containerized .NET 10
       summary: "High-efficiency workplace hardware custody platform engineered with .NET 10 LTS Minimal APIs, React 19, and Tailwind CSS tokens, featuring automated 09:00 AM overdue notifications, screen-centered date pickers, and tamper-evident IT operations logs.",
       categoryId: catEnterprise.id,
       coverImage: "/uploads/projects/equiplend/hero-preview.png",
-      tagsJson: JSON.stringify([".NET 10 LTS", "C# 14", "React 19", "Tailwind CSS", "Minimal APIs", "EF Core", "Bilingual i18n"]),
+      tagsJson: JSON.stringify([".NET 10", "C# 14", "React 19", "Tailwind CSS", "Minimal APIs", "EF Core", "Bilingual i18n"]),
       isFeatured: true,
       isPublished: true,
-      sortOrder: 2,
+      sortOrder: 3,
       projectDate: "2026-09",
       contentMarkdown: `## Executive Overview
 
@@ -214,7 +279,7 @@ Localization Engine      Bilingual Reactive Engine (English & ภาษาไท
     },
   });
 
-  // Project 3: OptiTrack WMS (Flagship Project)
+  // Project 4: OptiTrack WMS (Flagship Project)
   const pOptitrack = await prisma.project.create({
     data: {
       title: "OptiTrack WMS — Intelligent Warehouse Management System & Digital Twin",
@@ -226,7 +291,7 @@ Localization Engine      Bilingual Reactive Engine (English & ภาษาไท
       tagsJson: JSON.stringify(["Next.js 14", "TypeScript", "Supabase", "FastAPI", "Tailwind CSS", "Recharts", "AI Operations", "SCADA"]),
       isFeatured: true,
       isPublished: true,
-      sortOrder: 1,
+      sortOrder: 4,
       projectDate: "2026-05 - Present",
       contentMarkdown: `## Executive Overview
 
@@ -304,26 +369,26 @@ Localization Engine      Bilingual Reactive Engine (English & ภาษาไท
     ],
   });
 
-  // Project 2: CodePulse — Autonomous AI Codebase Intelligence
+  // Project 5: CodePulse — Autonomous AI Codebase Intelligence
   const pCodepulse = await prisma.project.create({
     data: {
       title: "CodePulse — Autonomous AI Codebase Intelligence & Architecture Telemetry",
       slug: "ai-codebase-intelligence",
-      summary: "Autonomous AI codebase intelligence and architecture telemetry platform (.NET 9 + Angular 19) providing real-time AST structural scanning, dependency drift detection, and health scorecards.",
+      summary: "Autonomous AI codebase intelligence and architecture telemetry platform (.NET 10 + Angular 19) providing real-time AST structural scanning, dependency drift detection, and health scorecards.",
       categoryId: catAi.id,
       coverImage: "/uploads/images/project-synapse.svg",
       pdfFile: "/uploads/documents/synapse-system-design.pdf",
-      tagsJson: JSON.stringify([".NET 9", "Angular 19", "TypeScript", "AST Analysis", "Tailwind CSS", "C#", "GitHub Pages"]),
-      isFeatured: true,
+      tagsJson: JSON.stringify([".NET 10", "C# 14", "Angular 19", "TypeScript", "AST Analysis", "Tailwind CSS", "GitHub Pages"]),
+      isFeatured: false,
       isPublished: true,
-      sortOrder: 2,
+      sortOrder: 5,
       projectDate: "2026-09",
       contentMarkdown: `## Project Overview
 
 **CodePulse** is an automated architectural telemetry system that inspects software repositories to extract dependency graphs, measure architectural drift, and verify code health using high-speed AST parsers.
 
 ### Technical Highlights
-- **.NET 9 Minimal APIs Backend**: Ultra-fast execution times, zero-allocation serialization, and minimal memory footprint.
+- **.NET 10 Minimal APIs Backend**: Ultra-fast execution times, zero-allocation serialization, and minimal memory footprint.
 - **Angular 19 Standalone Architecture**: Signal-based reactive state with zero unnecessary re-renders.
 - **Live AST Inspection**: Maps components, endpoints, and database models to prevent schema divergence.`,
     },
@@ -340,19 +405,19 @@ Localization Engine      Bilingual Reactive Engine (English & ภาษาไท
     ],
   });
 
-  // Project 3: AI Document Workflow & Segregation of Duties Engine
+  // Project 6: AI Document Workflow & Segregation of Duties Engine
   const pDocWorkflow = await prisma.project.create({
     data: {
       title: "AI Document Workflow & Segregation of Duties Engine",
       slug: "ai-document-workflow",
-      summary: "Enterprise-grade document workflow with automated segregation of duties, cryptographic SHA-256 verification, and compliance approval chains built on .NET 9 and Angular 19.",
+      summary: "Enterprise-grade document workflow with automated segregation of duties, cryptographic SHA-256 verification, and compliance approval chains built on .NET 10 and Angular 19.",
       categoryId: catEnterprise.id,
       coverImage: "/uploads/images/project-prism.svg",
       pdfFile: "/uploads/documents/prism-design-specs.pdf",
-      tagsJson: JSON.stringify([".NET 9", "Angular 19", "WebCrypto SHA-256", "C#", "TypeScript", "Tailwind CSS", "Compliance"]),
-      isFeatured: true,
+      tagsJson: JSON.stringify([".NET 10", "C# 14", "Angular 19", "WebCrypto SHA-256", "TypeScript", "Tailwind CSS", "Compliance"]),
+      isFeatured: false,
       isPublished: true,
-      sortOrder: 3,
+      sortOrder: 6,
       projectDate: "2026-09",
       contentMarkdown: `## Project Overview
 

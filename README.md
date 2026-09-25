@@ -23,11 +23,11 @@
 
 - **Primary Scope: Personal / Self-Use (ทำใช้เอง)**:
   - Built by and for **Tanathon Chanapha** as a dedicated personal engineering cockpit and single-tenant portfolio hub.
-  - Designed for personal cataloging: tracking self-developed production systems, logging in-progress prototypes on local environments, and managing planned architectural milestones (such as migrating .NET 9 to .NET 10 LTS).
+  - Designed for personal cataloging: tracking self-developed production systems, logging in-progress prototypes on local environments, and managing enterprise systems architecture (.NET 10 LTS, Angular Signals, and modern cloud stacks).
   - Eliminates reliance on cookie-cutter SaaS templates (Wix, Notion, Linktree), providing 100% data ownership, zero subscription overhead, and bespoke instrument-grade UX.
 - **Secondary Stakeholders (Public Reviewers & Visitors)**:
   - **Tech Leads & Principal Architects**: Evaluating systems design mindset, code discipline, AST comprehension, and end-to-end full-stack capabilities.
-  - **Engineering Hiring Managers & CTOs**: Reviewing enterprise-grade production applications (.NET 9, Angular 19, Next.js 14, WebGL2, TensorFlow.js).
+  - **Engineering Hiring Managers & CTOs**: Reviewing enterprise-grade production applications (.NET 10, Angular 19/21, React 19, Next.js 14, WebGL2, TensorFlow.js).
   - **Engineering Peers & Recruiters**: Accessing verified professional accreditations (Krones AG Germany), interactive contact dialog, and verified resume artifacts.
 
 ---
@@ -35,7 +35,7 @@
 ## ⚠️ 2. The Problem (Why Build a Personal System?)
 
 Commercial portfolio builders and generic website templates fail to meet specific engineering needs:
-1. **Generic Cookie-Cutter Layouts**: Standard site builders cannot represent multi-dimensional engineering taxonomies (.NET 9, Angular 19 Signals, WebGL2 shaders, AST telemetry) or interactive PDF modal inspection.
+1. **Generic Cookie-Cutter Layouts**: Standard site builders cannot represent multi-dimensional engineering taxonomies (.NET 10, Angular 19/21 Signals, WebGL2 shaders, AST telemetry) or interactive PDF modal inspection.
 2. **Cluttered & Inflexible Navigation**: Pre-made templates clutter screens with endless tag pills or clunky native selects that break on mobile and lack category/stack dual-filtering.
 3. **Lack of Zero-Config Self-Hosting**: Most platforms demand expensive SaaS subscriptions or inject branding, whereas a self-built Next.js + SQLite stack runs with zero overhead and full data control.
 
@@ -44,8 +44,8 @@ Commercial portfolio builders and generic website templates fail to meet specifi
 ## 💡 3. The Solution (Personal Cockpit Architecture)
 
 **Tanathon Chanapha Personal Portfolio Platform** solves these challenges through a unified, instrument-grade personal architectural showcase:
-- **Personal Cataloging (ทำใช้เอง)**: Instant tracking of finished works, prototypes in active development, and upcoming technical migrations (e.g. .NET 10 LTS roadmap).
-- **9 Authentic Production Systems**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
+- **Personal Cataloging (ทำใช้เอง)**: Instant tracking of finished works, prototypes in active development, and enterprise production systems (.NET 10 LTS & modern distributed architectures).
+- **10 Authentic Production Systems**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
 - **Dual Synchronized Filter Popovers**: "All Works" category dropdown and dynamic "All Tech Stacks" popover aligned on the same horizontal level, eliminating screen clutter while providing sub-second multi-dimensional filtering.
 - **Glassmorphic Instrument Design**: Built with modern CSS design tokens, custom SVG vector icons, dark/light ambient mesh gradients, and defensive UI UX (zero cumulative layout shifts).
 
@@ -126,11 +126,12 @@ flowchart TD
 
 | Project | Domain | Key Architecture & Tech Stack | Live Demo / Repository |
 | :--- | :--- | :--- | :--- |
+| **QueueFlow** | Enterprise Systems | .NET 10 LTS, C# 14 Minimal APIs, Angular 19 Signals, SignalR WebSockets, PostgreSQL | [Live App](https://queueflow-wheat.vercel.app) • [GitHub](https://github.com/ZillerDX/QueueFlow) |
 | **DeskFlow Rooms** | Enterprise Systems | .NET 10 LTS, C# 14 Minimal APIs, Angular 21 Signals, SignalR WebSockets | [Live App](https://deskflow-three-mauve.vercel.app/) • [GitHub](https://github.com/ZillerDX/deskflow) |
 | **EquipLend** | Enterprise Systems | .NET 10 LTS, C# 14 Minimal APIs, React 19, Tailwind CSS | [Live App](https://equiplend.vercel.app/) • [GitHub](https://github.com/ZillerDX/equiplend) |
 | **OptiTrack WMS** | Enterprise Systems | Next.js 14, TypeScript, FastAPI, Python, 2D/3D SCADA Digital Twin | [Live App](https://optitrack-wms.vercel.app) • [GitHub](https://github.com/ZillerDX/Optitrack-WMS) |
-| **CodePulse** | AI & Data Platforms | .NET 9 Minimal APIs, Angular 19 Standalone Signals, AST Telemetry | [Live System](https://zillerdx.github.io/ai-codebase-intelligence/) • [GitHub](https://github.com/ZillerDX/ai-codebase-intelligence) |
-| **AI Document Workflow** | Enterprise Systems | .NET 9, Angular 19, WebCrypto SHA-256 Cryptographic Audit Chaining | [Live System](https://zillerdx.github.io/ai-document-workflow/) • [GitHub](https://github.com/ZillerDX/ai-document-workflow) |
+| **CodePulse** | AI & Data Platforms | .NET 10 Minimal APIs, C# 14, Angular 19 Standalone Signals, AST Telemetry | [Live System](https://zillerdx.github.io/ai-codebase-intelligence/) • [GitHub](https://github.com/ZillerDX/ai-codebase-intelligence) |
+| **AI Document Workflow** | Enterprise Systems | .NET 10, C# 14, Angular 19, WebCrypto SHA-256 Cryptographic Audit Chaining | [Live System](https://zillerdx.github.io/ai-document-workflow/) • [GitHub](https://github.com/ZillerDX/ai-document-workflow) |
 | **Axiom (Math Studio)** | AI & Data Platforms | WebGL2, GLSL Shaders, React, TypeScript, GPU Raymarching | [Live Lab](https://zillerdx.github.io/math-generative-art-studio/) • [GitHub](https://github.com/ZillerDX/math-generative-art-studio) |
 | **ML Model Playground** | AI & Data Platforms | TensorFlow.js, React 18, TypeScript, In-Browser Neural Networks | [Live Playground](https://zillerdx.github.io/ml-model-playground/) • [GitHub](https://github.com/ZillerDX/ml-model-playground) |
 | **GlobePass** | Web Applications | Next.js 14, TypeScript, FastAPI, Python, 227-Country Consular Telemetry | [Live App](https://globepass-visa.vercel.app) • [GitHub](https://github.com/ZillerDX/globepass-visa) |

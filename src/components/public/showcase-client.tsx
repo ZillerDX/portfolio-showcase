@@ -64,7 +64,16 @@ export function ShowcaseClient({
       if (selectedTechStack !== "all") {
         try {
           const tags: string[] = JSON.parse(project.tagsJson || "[]");
-          if (!tags.some((t) => t.toLowerCase() === selectedTechStack.toLowerCase())) {
+          const targetNorm = selectedTechStack.toLowerCase().replace(/[\s\-_.]/g, "");
+          const matches = tags.some((t) => {
+            const tLower = t.toLowerCase();
+            const tNorm = tLower.replace(/[\s\-_.]/g, "");
+            if (tLower === selectedTechStack.toLowerCase()) return true;
+            if (tNorm === targetNorm) return true;
+            if (targetNorm === "net10" && tNorm.includes("net10")) return true;
+            return false;
+          });
+          if (!matches) {
             return false;
           }
         } catch {
@@ -75,10 +84,27 @@ export function ShowcaseClient({
       // Search query filter
       if (searchQuery.trim() !== "") {
         const query = searchQuery.toLowerCase().trim();
+        const queryNorm = query.replace(/[\s\-_.]/g, "");
         const titleMatch = project.title.toLowerCase().includes(query);
         const summaryMatch = project.summary.toLowerCase().includes(query);
-        const tagMatch = project.tagsJson.toLowerCase().includes(query);
         const categoryMatch = project.category?.name.toLowerCase().includes(query);
+
+        let tagMatch = project.tagsJson.toLowerCase().includes(query);
+        if (!tagMatch) {
+          try {
+            const tags: string[] = JSON.parse(project.tagsJson || "[]");
+            tagMatch = tags.some((t) => {
+              const tNorm = t.toLowerCase().replace(/[\s\-_.]/g, "");
+              return (
+                t.toLowerCase().includes(query) ||
+                (queryNorm.length >= 3 && tNorm.includes(queryNorm)) ||
+                ((queryNorm === "net10" || queryNorm === "dotnet10") && tNorm.includes("net10"))
+              );
+            });
+          } catch {
+            // ignore
+          }
+        }
 
         if (!titleMatch && !summaryMatch && !tagMatch && !categoryMatch) {
           return false;
