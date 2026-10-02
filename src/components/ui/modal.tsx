@@ -78,21 +78,22 @@ export function Modal({
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50">
-          <div className="text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
+        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/50">
+          <div className="min-w-0 flex-1 text-base font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight">
             {title}
           </div>
           <button
+            type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="p-1.5 rounded-lg text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-[0.98] transition-colors cursor-pointer"
+            className="shrink-0 p-2 rounded-lg text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 active:scale-[0.98] transition-colors cursor-pointer"
           >
             <X className="size-4 shrink-0" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="max-h-[calc(85vh-80px)] overflow-y-auto p-6">
+        <div className="max-h-[calc(85dvh-80px)] overflow-y-auto p-4 sm:p-6">
           {children}
         </div>
       </div>

@@ -57,7 +57,7 @@ export function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps
       title={
         <div className="flex items-center gap-2.5 truncate">
           {project.category && (
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
+            <span className="shrink-0 whitespace-nowrap text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
               {project.category.name}
             </span>
           )}
