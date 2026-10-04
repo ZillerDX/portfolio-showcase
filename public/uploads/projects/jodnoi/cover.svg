@@ -8,21 +8,20 @@
     </linearGradient>
 
     <!-- Ambient Glow Gradient -->
-    <radialGradient id="glow" cx="25%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
+    <radialGradient id="glow" cx="22%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#090d16" stop-opacity="0" />
     </radialGradient>
-
-    <!-- Card Background Gradient -->
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
-    </linearGradient>
 
     <!-- Grid Pattern -->
     <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
       <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
     </pattern>
+
+    <!-- Clip Path for Mascot inside Backdrop -->
+    <clipPath id="mascotCircleClip">
+      <circle cx="170" cy="225" r="140" />
+    </clipPath>
   </defs>
 
   <!-- Background Base & Glow -->
@@ -33,45 +32,111 @@
   <!-- Outer Border Frame -->
   <rect x="1.5" y="1.5" width="797" height="447" rx="16" fill="none" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6" />
 
-  <!-- Left Side: Mascot Emblem & Mascot Visual -->
-  <g transform="translate(60, 85)">
-    <!-- Mascot Backdrop Circle with Glow -->
-    <circle cx="140" cy="140" r="120" fill="#1e1b4b" fill-opacity="0.7" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.5" />
-    <circle cx="140" cy="140" r="100" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+  <!-- Left Side: Official Anime Girl Mascot Badge -->
+  <!-- Ambient Mascot Backdrops -->
+  <circle cx="170" cy="225" r="145" fill="#1e1b4b" fill-opacity="0.7" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.5" />
+  <circle cx="170" cy="225" r="140" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.4" />
 
-    <!-- Cute Stylized Piggy / Coin Mascot -->
-    <!-- Piggy Ears -->
-    <path d="M 95 85 L 115 50 L 135 75 Z" fill="#f43f5e" />
-    <path d="M 145 75 L 165 50 L 185 85 Z" fill="#f43f5e" />
-    <path d="M 103 80 L 115 58 L 127 75 Z" fill="#fda4af" />
-    <path d="M 153 75 L 165 58 L 177 80 Z" fill="#fda4af" />
+  <!-- Mascot Rendered with Official SVG Elements -->
+  <!-- Official viewBox is 34 58 312 346, center of mascot is ~190, 215. Scale ~ 0.72, translate to fit in circle cx=170, cy=225 -->
+  <g clip-path="url(#mascotCircleClip)">
+    <g transform="translate(34, 70) scale(0.72)">
+      <!-- Circle behind character inside official mascot -->
+      <circle cx="190" cy="215" r="150" fill="#e8e4fb"/>
 
-    <!-- Piggy Head -->
-    <circle cx="140" cy="140" r="68" fill="#fb7185" />
+      <!-- Sparkles -->
+      <path d="M55 160 Q55.8 168.2 64 170 Q55.8 171.8 55 180 Q54.2 171.8 46 170 Q54.2 168.2 55 160 Z" fill="#fbd857"/>
+      <path d="M322 117 Q323.9 129.1 336 131 Q323.9 132.9 322 145 Q320.1 132.9 308 131 Q320.1 129.1 322 117 Z" fill="#fbd857"/>
+      <circle cx="65" cy="247" r="4.2" fill="#7fa8d9"/>
+      <circle cx="320" cy="211" r="4.2" fill="#dc5f6b"/>
 
-    <!-- Cheeks -->
-    <circle cx="102" cy="150" r="12" fill="#f43f5e" opacity="0.6" />
-    <circle cx="178" cy="150" r="12" fill="#f43f5e" opacity="0.6" />
+      <!-- Hair Back -->
+      <path d="M108 195 Q100 105 190 96 Q280 105 272 195 L286 282 Q240 296 190 290 Q140 296 94 282 Z" fill="#4a3a78" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
 
-    <!-- Eyes -->
-    <circle cx="118" cy="125" r="7" fill="#0f172a" />
-    <circle cx="162" cy="125" r="7" fill="#0f172a" />
-    <circle cx="116" cy="123" r="2.5" fill="#ffffff" />
-    <circle cx="160" cy="123" r="2.5" fill="#ffffff" />
+      <!-- Neck -->
+      <rect x="172" y="250" width="36" height="46" fill="#ffd9c4" stroke="#2a2147" stroke-width="3"/>
+      <!-- Shirt -->
+      <path d="M96 400 Q100 306 150 286 L230 286 Q280 306 284 400 Z" fill="#6fa8dc" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Collar -->
+      <path d="M160 287 L190 335 L220 287 Z" fill="#ffffff" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
 
-    <!-- Snout -->
-    <ellipse cx="140" cy="152" rx="26" ry="18" fill="#fda4af" />
-    <ellipse cx="131" cy="152" rx="4.5" ry="7" fill="#be123c" />
-    <ellipse cx="149" cy="152" rx="4.5" ry="7" fill="#be123c" />
+      <!-- Face Base -->
+      <ellipse cx="190" cy="194" rx="70" ry="76" fill="#ffe3d3" stroke="#2a2147" stroke-width="3"/>
+      <!-- Blushes -->
+      <ellipse cx="140" cy="230" rx="14" ry="9" fill="#ff9aa8" opacity="0.65"/>
+      <ellipse cx="240" cy="230" rx="14" ry="9" fill="#ff9aa8" opacity="0.65"/>
 
-    <!-- Coin Slot on Top -->
-    <rect x="122" y="76" width="36" height="5" rx="2.5" fill="#be123c" />
+      <!-- Eyebrows -->
+      <path d="M145 176 Q160 169 175 175" fill="none" stroke="#2a2147" stroke-width="3" stroke-linecap="round"/>
+      <path d="M205 175 Q220 169 235 176" fill="none" stroke="#2a2147" stroke-width="3" stroke-linecap="round"/>
 
-    <!-- Floating Gold Coin -->
-    <g transform="translate(140, 52)">
-      <circle cx="0" cy="0" r="18" fill="#eab308" stroke="#fef08a" stroke-width="2" />
-      <circle cx="0" cy="0" r="13" fill="none" stroke="#ca8a04" stroke-width="1.5" />
-      <text x="0" y="5" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#713f12" text-anchor="middle">฿</text>
+      <!-- Eyes Background -->
+      <ellipse cx="160" cy="205" rx="13" ry="16" fill="#ffffff"/>
+      <ellipse cx="220" cy="205" rx="13" ry="16" fill="#ffffff"/>
+      <!-- Iris -->
+      <ellipse cx="160" cy="208" rx="11" ry="14" fill="#2fa59c"/>
+      <ellipse cx="220" cy="208" rx="11" ry="14" fill="#2fa59c"/>
+      <!-- Pupils -->
+      <ellipse cx="160" cy="210" rx="6" ry="8" fill="#1d1b3a"/>
+      <ellipse cx="220" cy="210" rx="6" ry="8" fill="#1d1b3a"/>
+      <!-- Highlights -->
+      <circle cx="155" cy="203" r="4" fill="#ffffff"/>
+      <circle cx="215" cy="203" r="4" fill="#ffffff"/>
+      <circle cx="164" cy="214" r="2" fill="#ffffff"/>
+      <circle cx="224" cy="214" r="2" fill="#ffffff"/>
+      <!-- Eyelashes -->
+      <path d="M145 200 Q160 188 176 199" fill="none" stroke="#2a2147" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M204 199 Q220 188 235 200" fill="none" stroke="#2a2147" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Glasses -->
+      <circle cx="160" cy="206" r="26" fill="#bfe3ff" fill-opacity="0.25" stroke="#2f3a8c" stroke-width="3"/>
+      <circle cx="220" cy="206" r="26" fill="#bfe3ff" fill-opacity="0.25" stroke="#2f3a8c" stroke-width="3"/>
+      <path d="M186 203 Q190 199 194 203" fill="none" stroke="#2f3a8c" stroke-width="3" stroke-linecap="round"/>
+      <path d="M134 202 L118 198 M246 202 L262 198" fill="none" stroke="#2f3a8c" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Nose & Mouth -->
+      <path d="M189 228 L191 230" stroke="#c98a73" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M178 243 Q190 253 202 243" fill="#e8566b" stroke="#2a2147" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+      <!-- Hair Front & Bangs -->
+      <path d="M118 196 Q108 108 190 102 Q272 108 262 196 Q252 154 234 142 Q218 166 190 152 Q162 166 146 142 Q128 154 118 196 Z" fill="#4a3a78" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
+      <!-- Side Strands -->
+      <path d="M120 180 Q108 232 122 268 L140 252 Q130 218 138 168 Z" fill="#4a3a78" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M260 180 Q272 232 258 268 L240 252 Q250 218 242 168 Z" fill="#4a3a78" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M170 112 Q190 122 214 112" fill="none" stroke="#6b58a8" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Hair Clip -->
+      <circle cx="238" cy="124" r="11" fill="#ffd54a" stroke="#2a2147" stroke-width="3"/>
+      <circle cx="238" cy="124" r="5.5" fill="#e0a92a"/>
+
+      <!-- Clipboard & Baht Icon -->
+      <g transform="rotate(-4 190 342)">
+        <rect x="123" y="297" width="134" height="90" rx="9" fill="#f6b94e" stroke="#2a2147" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="128" y="302" width="124" height="80" rx="5" fill="#fff6df" stroke="#2a2147" stroke-width="2"/>
+        <g stroke="#9fa6cf" stroke-width="3.2" stroke-linecap="round">
+          <path d="M139 318 H197"/>
+          <path d="M139 331 H184"/>
+          <path d="M139 345 H194"/>
+          <path d="M139 359 H168"/>
+        </g>
+        <rect x="215" y="303" width="21" height="36" fill="#bfe3e6"/>
+        <g fill="none" stroke="#c8932b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M222 314 H228 Q232 314 232 318.5 Q232 323 228 323 H222 M222 323 H229 Q233.5 323 233.5 328 Q233.5 333 229 333 H222 M222 314 V333"/>
+          <path d="M225 310 V336 M229.500 310 V336"/>
+        </g>
+      </g>
+
+      <!-- Pencil -->
+      <g transform="translate(270 293) rotate(121)" stroke="#2a2147" stroke-width="2.5" stroke-linejoin="round">
+        <rect x="-11" y="-5.500" width="11" height="11" rx="3" fill="#f29aa8"/>
+        <rect x="0" y="-5.500" width="44" height="11" fill="#fbd857"/>
+        <path d="M44 -5.500 L60 0 L44 5.500 Z" fill="#fbe0a0"/>
+        <path d="M55.500 -1.800 L63 0 L55.500 1.800 Z" fill="#2a2147"/>
+      </g>
+
+      <!-- Hands -->
+      <circle cx="127" cy="347" r="13.500" fill="#fbe3d3" stroke="#2a2147" stroke-width="3"/>
+      <circle cx="253" cy="323" r="13.500" fill="#fbe3d3" stroke="#2a2147" stroke-width="3"/>
     </g>
   </g>
 
