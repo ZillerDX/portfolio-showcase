@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Ambient Glow Gradient -->
+    <radialGradient id="glow" cx="25%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#090d16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base & Glow -->
+  <rect width="800" height="450" fill="url(#bgGrad)" />
+  <rect width="800" height="450" fill="url(#glow)" />
+  <rect width="800" height="450" fill="url(#grid)" />
+
+  <!-- Outer Border Frame -->
+  <rect x="1.5" y="1.5" width="797" height="447" rx="16" fill="none" stroke="#334155" stroke-width="1.5" stroke-opacity="0.6" />
+
+  <!-- Left Side: Mascot Emblem & Mascot Visual -->
+  <g transform="translate(60, 85)">
+    <!-- Mascot Backdrop Circle with Glow -->
+    <circle cx="140" cy="140" r="120" fill="#1e1b4b" fill-opacity="0.7" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.5" />
+    <circle cx="140" cy="140" r="100" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+
+    <!-- Cute Stylized Piggy / Coin Mascot -->
+    <!-- Piggy Ears -->
+    <path d="M 95 85 L 115 50 L 135 75 Z" fill="#f43f5e" />
+    <path d="M 145 75 L 165 50 L 185 85 Z" fill="#f43f5e" />
+    <path d="M 103 80 L 115 58 L 127 75 Z" fill="#fda4af" />
+    <path d="M 153 75 L 165 58 L 177 80 Z" fill="#fda4af" />
+
+    <!-- Piggy Head -->
+    <circle cx="140" cy="140" r="68" fill="#fb7185" />
+
+    <!-- Cheeks -->
+    <circle cx="102" cy="150" r="12" fill="#f43f5e" opacity="0.6" />
+    <circle cx="178" cy="150" r="12" fill="#f43f5e" opacity="0.6" />
+
+    <!-- Eyes -->
+    <circle cx="118" cy="125" r="7" fill="#0f172a" />
+    <circle cx="162" cy="125" r="7" fill="#0f172a" />
+    <circle cx="116" cy="123" r="2.5" fill="#ffffff" />
+    <circle cx="160" cy="123" r="2.5" fill="#ffffff" />
+
+    <!-- Snout -->
+    <ellipse cx="140" cy="152" rx="26" ry="18" fill="#fda4af" />
+    <ellipse cx="131" cy="152" rx="4.5" ry="7" fill="#be123c" />
+    <ellipse cx="149" cy="152" rx="4.5" ry="7" fill="#be123c" />
+
+    <!-- Coin Slot on Top -->
+    <rect x="122" y="76" width="36" height="5" rx="2.5" fill="#be123c" />
+
+    <!-- Floating Gold Coin -->
+    <g transform="translate(140, 52)">
+      <circle cx="0" cy="0" r="18" fill="#eab308" stroke="#fef08a" stroke-width="2" />
+      <circle cx="0" cy="0" r="13" fill="none" stroke="#ca8a04" stroke-width="1.5" />
+      <text x="0" y="5" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="900" fill="#713f12" text-anchor="middle">฿</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Content & Branding -->
+  <g transform="translate(370, 75)">
+    <!-- Category & Form Factor Badge -->
+    <g transform="translate(0, 0)">
+      <rect width="180" height="28" rx="14" fill="#1e293b" stroke="#6366f1" stroke-width="1.2" />
+      <circle cx="15" cy="14" r="4.5" fill="#10b981" />
+      <text x="28" y="18" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#38bdf8" letter-spacing="1">MOBILE APP · PWA</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="70" font-family="'Plus Jakarta Sans', Inter, system-ui, sans-serif" font-size="38" font-weight="800" fill="#ffffff" letter-spacing="-0.5">Jodnoi · จดหน่อย</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="106" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="500" fill="#94a3b8">
+      Minimal Offline-First Personal Finance Tracker
+    </text>
+
+    <!-- Thai Hook / USP -->
+    <text x="0" y="134" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="400" fill="#cbd5e1">
+      บันทึกรายรับรายจ่ายใน 3 แตะ · ข้อมูลอยู่ในเครื่องคุณ 100%
+    </text>
+
+    <!-- Feature Pills Grid -->
+    <g transform="translate(0, 162)">
+      <!-- Pill 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="175" height="32" rx="8" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+        <text x="12" y="20" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">⚡ 3-Tap Quick Logging</text>
+      </g>
+      <!-- Pill 2 -->
+      <g transform="translate(185, 0)">
+        <rect width="185" height="32" rx="8" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+        <text x="12" y="20" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">🔒 Dexie (IndexedDB)</text>
+      </g>
+      <!-- Pill 3 -->
+      <g transform="translate(0, 42)">
+        <rect width="175" height="32" rx="8" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+        <text x="12" y="20" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">📱 Zero-Install PWA</text>
+      </g>
+      <!-- Pill 4 -->
+      <g transform="translate(185, 42)">
+        <rect width="185" height="32" rx="8" fill="#1e293b" fill-opacity="0.8" stroke="#334155" stroke-width="1" />
+        <text x="12" y="20" font-family="'JetBrains Mono', Consolas, monospace" font-size="11.5" font-weight="600" fill="#e2e8f0">☁️ Cloudflare Workers</text>
+      </g>
+    </g>
+
+    <!-- Bottom Tech Stack Tagline -->
+    <g transform="translate(0, 260)">
+      <text x="0" y="0" font-family="'JetBrains Mono', Consolas, monospace" font-size="12" font-weight="500" fill="#60a5fa">
+        React 19 · TypeScript · Tailwind CSS v4 · Recharts · Vitest
+      </text>
+    </g>
+  </g>
+</svg>

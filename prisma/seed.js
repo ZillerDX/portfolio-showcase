@@ -279,7 +279,71 @@ Localization Engine      Bilingual Reactive Engine (English & ภาษาไท
     },
   });
 
-  // Project 4: OptiTrack WMS (Flagship Project)
+  // Project 4: Jodnoi (Mobile App & Offline-First PWA)
+  const pJodnoi = await prisma.project.create({
+    data: {
+      title: "Jodnoi — Minimalist Offline-First Mobile Finance App & PWA",
+      slug: "jodnoi",
+      summary: "Minimalist, offline-first personal finance mobile application and PWA engineered with React 19, TypeScript, and Dexie.js (IndexedDB). Features 3-tap transaction logging, zero-cloud data sovereignty, dynamic Recharts telemetry, and Cloudflare Workers static delivery.",
+      categoryId: catMobile.id,
+      coverImage: "/uploads/projects/jodnoi/cover.svg",
+      tagsJson: JSON.stringify(["Mobile App", "PWA", "React 19", "TypeScript", "Tailwind CSS", "IndexedDB", "Offline-First", "Cloudflare"]),
+      isFeatured: true,
+      isPublished: true,
+      sortOrder: 4,
+      projectDate: "2026-10",
+      contentMarkdown: `## Executive Overview
+
+**Jodnoi (จดหน่อย)** เป็น Mobile Application & Installable PWA สไตล์ Minimalist ออกแบบมาเพื่อแก้ Pain Point ของแอปบันทึกบัญชีทั่วไปที่มักซับซ้อนเกินไปจนผู้ใช้เลิกบันทึก โดยยึดหลัก **"จดให้เสร็จใน 3 แตะ"**
+
+แอปทำงานแบบ **Local-First & Offline-First 100%** จัดเก็บข้อมูลทั้งหมดไว้ใน IndexedDB ของเบราว์เซอร์บนอุปกรณ์ของผู้ใช้โดยตรง ปราศจากเซิร์ฟเวอร์ Backend ปราศจาก Tracker/Analytics จึงมอบความเป็นส่วนตัวสูงสุด (Zero-Knowledge Privacy) พร้อมทั้งสามารถติดตั้งลงบนหน้าจอโฮมทั้ง iOS (Safari Add to Home Screen) และ Android (Chrome PWA Installation) ได้อย่างราบรื่น
+
+---
+
+## Architectural Highlights
+
+\`\`\`
+Architecture Model      Offline-First & Local-First Single Page Application (PWA)
+Client & UI Framework   React 19 + TypeScript (Strict Mode) + Tailwind CSS v4
+Client-Side Database    Dexie.js (IndexedDB wrapper with schema versioning & migrations)
+Data Visualization      Recharts (Category breakdowns, daily velocity, multi-range filtering)
+PWA & Service Worker    vite-plugin-pwa (Workbox cache-first runtime caching)
+Hosting & Edge Assets   Cloudflare Workers Static Assets (wrangler deploy)
+\`\`\`
+
+### 1. 3-Tap Frictionless Transaction Intake
+- **Bottom Sheet Interaction**: แผ่นบันทึกสไลด์ขึ้นมาจากด้านล่าง พร้อมปุ่มหมวดหมู่ขนาดใหญ่ สัมผัสง่ายด้วยมือเดียวบนสมาร์ตโฟน
+- **Smart Timestamp Defaulting**: กำหนดวันที่และเวลาเริ่มต้นเป็นปัจจุบันโดยอัตโนมัติ ลดแรงต้านทานในการบันทึกให้เหลือน้อยที่สุด
+- **Currency Stored in Satang**: ป้องกันปัญหาทศนิยมคลาดเคลื่อนของตัวเลขลอยตัว (Floating-point precision issues) โดยเก็บค่าเงินเป็นจำนวนเต็มสตางค์
+
+### 2. Complete Local Data Sovereignty & Offline Integrity
+- **IndexedDB via Dexie.js**: กู้คืนและจัดเก็บข้อมูลธุรกรรม บัญชี และหมวดหมู่ในเครื่องแบบถาวรด้วย \`navigator.storage.persist()\`
+- **Zero Cloud Leakage**: ข้อมูลทางการเงินไม่เคยถูกส่งออกภายนอกเครื่อง มั่นใจในความปลอดภัยและความเป็นส่วนตัว 100%
+- **Backup & Portability**: ระบบ Export/Import ข้อมูลเป็นไฟล์ JSON (พร้อมรองรับ Schema migration สำหรับไฟล์เวอร์ชันเก่า) และการส่งออกเป็นไฟล์ CSV สำหรับเปิดบน Excel หรือ Google Sheets
+
+### 3. Multi-Account & Dynamic Category Taxonomy
+- **Multi-Account Tracking**: จัดการเงินสด, บัญชีธนาคาร, และบัตรเครดิต พร้อมจดจำบัญชีล่าสุดอัตโนมัติ
+- **Custom Categorization**: ปรับแต่งชื่อ, ไอคอน, และโทนสีของหมวดหมู่เงินเข้า-เงินออกได้อย่างอิสระ
+- **Interactive Financial Dashboard**: วิเคราะห์กระแสเงินสดรายรับ-รายจ่าย กราฟแนวโน้ม และสัดส่วนหมวดหมู่แบบไดนามิก
+`,
+      links: {
+        create: [
+          { label: "Live App (Cloudflare)", url: "https://jodnoi.jodnoi.workers.dev", type: "live" },
+          { label: "GitHub Repository", url: "https://github.com/ZillerDX/jodnoi", type: "github" },
+        ],
+      },
+      images: {
+        create: [
+          { imageUrl: "/uploads/projects/jodnoi/cover.svg", caption: "Jodnoi Minimalist Mobile Finance Application & PWA Architecture", sortOrder: 1 },
+          { imageUrl: "/uploads/projects/jodnoi/mobile-home.png", caption: "Mobile Home Screen & Fast Transaction Overview", sortOrder: 2 },
+          { imageUrl: "/uploads/projects/jodnoi/quick-add.png", caption: "3-Tap Quick Logging Bottom Sheet with Large Category Badges", sortOrder: 3 },
+          { imageUrl: "/uploads/projects/jodnoi/dashboard.png", caption: "Interactive Cashflow Telemetry, Expense Trends & Category Breakdown", sortOrder: 4 },
+        ],
+      },
+    },
+  });
+
+  // Project 5: OptiTrack WMS (Flagship Project)
   const pOptitrack = await prisma.project.create({
     data: {
       title: "OptiTrack WMS — Intelligent Warehouse Management System & Digital Twin",
@@ -291,7 +355,7 @@ Localization Engine      Bilingual Reactive Engine (English & ภาษาไท
       tagsJson: JSON.stringify(["Next.js 14", "TypeScript", "Supabase", "FastAPI", "Tailwind CSS", "Recharts", "AI Operations", "SCADA"]),
       isFeatured: true,
       isPublished: true,
-      sortOrder: 4,
+      sortOrder: 5,
       projectDate: "2026-05 - Present",
       contentMarkdown: `## Executive Overview
 
