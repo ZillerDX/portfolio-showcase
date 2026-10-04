@@ -157,9 +157,9 @@
       Minimal Offline-First Personal Finance Tracker
     </text>
 
-    <!-- Thai Hook / USP -->
+    <!-- English Hook / Value Proposition -->
     <text x="0" y="134" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="400" fill="#cbd5e1">
-      บันทึกรายรับรายจ่ายใน 3 แตะ · ข้อมูลอยู่ในเครื่องคุณ 100%
+      Log transactions in 3 taps · 100% on-device private data
     </text>
 
     <!-- Feature Pills Grid -->
