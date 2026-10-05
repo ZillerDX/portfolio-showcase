@@ -70,7 +70,7 @@ async function main() {
       title: "Full-Stack & Systems Architect | Software Engineer",
       bio: "Engineering high-performance enterprise systems, autonomous AI agents, digital twin platforms, and modern web architectures with disciplined software craft.",
       avatarUrl: "/uploads/images/avatar.png",
-      resumePdfUrl: "/uploads/documents/alex-chen-resume.pdf",
+      resumePdfUrl: "/uploads/documents/tanathon-chanapha-resume.pdf",
       availableForWork: true,
       availabilityText: "Available for high-impact software engineering & architecture opportunities",
       contactEmail: "chanapha.tanathon@gmail.com",
