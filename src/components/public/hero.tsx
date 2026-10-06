@@ -9,21 +9,34 @@ import {
   Github,
   Linkedin,
   BadgeCheck,
-  Briefcase,
   Check,
-  Cpu,
-  ShieldCheck,
-  Zap,
-  Sparkles,
+  FolderGit2,
+  Presentation,
+  Languages,
+  Building2,
+  Plane,
   Copy,
 } from "lucide-react";
 import { JobsdbIcon } from "@/components/ui/jobsdb-icon";
 import { OfficialYoutubeIcon } from "@/components/ui/youtube-icon";
 import { Modal } from "@/components/ui/modal";
 
-export function PublicHero({ profile }: { profile: ProfileData }) {
+export function PublicHero({
+  profile,
+  projectCount,
+}: {
+  profile: ProfileData;
+  projectCount: number;
+}) {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+
+  const stats = [
+    { icon: FolderGit2, value: String(projectCount), label: "deployed projects, each with live demo + code", accent: "text-blue-500" },
+    { icon: Presentation, value: "8", label: "bilingual AI workshops delivered", accent: "text-purple-500" },
+    { icon: Languages, value: "2", label: "training sessions run in English", accent: "text-emerald-500" },
+    { icon: Building2, value: "1", label: "internal app delivered to Krones Australia", accent: "text-amber-500" },
+  ];
 
   const contactEmail = profile.contactEmail || "chanapha.tanathon@gmail.com";
 
@@ -187,99 +200,49 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
                   </div>
                 )}
                 <div className="inline-flex items-center gap-1.5">
-                  <Briefcase className="size-3.5 shrink-0 text-emerald-500" />
-                  <span>Full-Stack Development · AI Integration</span>
+                  <Plane className="size-3.5 shrink-0 text-emerald-500" />
+                  <span>Ready to relocate</span>
                 </div>
               </div>
 
-              {/* Engineering Status & Roadmap Dispatch Notes */}
+              {/* Current focus */}
               <div className="pt-2">
                 <div className="p-3.5 sm:p-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/70 dark:bg-zinc-950/40 backdrop-blur-xs">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="relative flex size-2 shrink-0">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
                       <span className="relative inline-flex rounded-full size-2 bg-blue-500" />
                     </span>
                     <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                      Engineering Status & Roadmap
+                      Currently
                     </span>
                   </div>
-                  <ul className="space-y-1.5 text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed font-sans">
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-sans">
                     <li className="flex items-start gap-2">
                       <span className="text-blue-500 dark:text-blue-400 mt-0.5 shrink-0 font-bold">•</span>
                       <span>
-                        <strong className="font-semibold text-zinc-900 dark:text-zinc-100">Local-First Development:</strong> More active projects and systems are being developed locally in spare time, queued for upcoming deployment.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 dark:text-blue-400 mt-0.5 shrink-0 font-bold">•</span>
-                      <span>
-                        <strong className="font-semibold text-zinc-900 dark:text-zinc-100">Continuous Growth:</strong> Continuously assimilating new technologies, eager to share architectural ideas, and always welcoming constructive feedback.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-blue-500 dark:text-blue-400 mt-0.5 shrink-0 font-bold">•</span>
-                      <span>
-                        <strong className="font-semibold text-zinc-900 dark:text-zinc-100">Ongoing Showcase Updates:</strong> Fresh live deployments, interactive case studies, and engineering updates will be added to this site regularly.
+                        <strong className="font-semibold text-zinc-900 dark:text-zinc-100">Focus:</strong> end-to-end web platforms (.NET, React, SQL) and LLM-powered features in real workflows.
                       </span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              {/* Engineering Mindset & Workflow */}
+              {/* Evidence in numbers */}
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-amber-400/50 transition-colors group">
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <Zap className="size-3.5 shrink-0 text-amber-500" />
-                    <span>01 &bull; Learn</span>
+                {stats.map(({ icon: Icon, value, label, accent }) => (
+                  <div
+                    key={label}
+                    className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80"
+                  >
+                    <Icon className={`size-4 shrink-0 ${accent}`} />
+                    <div className="text-2xl font-extrabold text-zinc-900 dark:text-zinc-100 mt-1.5 font-heading leading-none">
+                      {value}
+                    </div>
+                    <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
+                      {label}
+                    </div>
                   </div>
-                  <div className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-heading">
-                    Fast Learner
-                  </div>
-                  <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    Rapid Tech Mastery
-                  </div>
-                </div>
-
-                <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-emerald-400/50 transition-colors group">
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <Cpu className="size-3.5 shrink-0 text-emerald-500" />
-                    <span>02 &bull; Think</span>
-                  </div>
-                  <div className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-heading">
-                    Systems Mindset
-                  </div>
-                  <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    Scalable Architecture
-                  </div>
-                </div>
-
-                <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-blue-400/50 transition-colors group">
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <ShieldCheck className="size-3.5 shrink-0 text-blue-500" />
-                    <span>03 &bull; Craft</span>
-                  </div>
-                  <div className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-heading">
-                    Disciplined Code
-                  </div>
-                  <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    Robust & Clean Standards
-                  </div>
-                </div>
-
-                <div className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 hover:border-purple-400/50 transition-colors group">
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
-                    <Sparkles className="size-3.5 shrink-0 text-purple-500" />
-                    <span>04 &bull; Deliver</span>
-                  </div>
-                  <div className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-heading">
-                    Production Impact
-                  </div>
-                  <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-0.5">
-                    Measurable Value Delivery
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -309,7 +272,7 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
       >
         <div className="space-y-4">
           <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Interested in discussing software architecture, engineering roles, or high-impact projects? Reach out directly via email:
+            Interested in engineering roles or project opportunities? Reach out directly via email:
           </p>
 
           {/* Email Address Container Card */}
