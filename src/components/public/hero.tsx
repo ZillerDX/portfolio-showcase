@@ -10,10 +10,10 @@ import {
   Linkedin,
   BadgeCheck,
   Check,
-  FolderGit2,
-  Presentation,
-  Languages,
-  Building2,
+  Layers,
+  Sparkles,
+  Radio,
+  MessagesSquare,
   Plane,
   Copy,
 } from "lucide-react";
@@ -21,21 +21,15 @@ import { JobsdbIcon } from "@/components/ui/jobsdb-icon";
 import { OfficialYoutubeIcon } from "@/components/ui/youtube-icon";
 import { Modal } from "@/components/ui/modal";
 
-export function PublicHero({
-  profile,
-  projectCount,
-}: {
-  profile: ProfileData;
-  projectCount: number;
-}) {
+export function PublicHero({ profile }: { profile: ProfileData }) {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
-  const stats = [
-    { icon: FolderGit2, value: String(projectCount), label: "deployed projects, each with live demo + code", accent: "text-blue-500" },
-    { icon: Presentation, value: "8", label: "bilingual AI workshops delivered", accent: "text-purple-500" },
-    { icon: Languages, value: "2", label: "training sessions run in English", accent: "text-emerald-500" },
-    { icon: Building2, value: "1", label: "internal app delivered to Krones Australia", accent: "text-amber-500" },
+  const strengths = [
+    { icon: Layers, step: "01 • Build", title: "End-to-End Delivery", detail: "Database, API, UI and deployment", accent: "text-blue-500", hover: "hover:border-blue-400/50" },
+    { icon: Sparkles, step: "02 • AI", title: "AI in Real Workflows", detail: "LLM features with graceful fallbacks", accent: "text-purple-500", hover: "hover:border-purple-400/50" },
+    { icon: Radio, step: "03 • Engineer", title: "Real-Time & Concurrency", detail: "SignalR, PostgreSQL, safe queues", accent: "text-emerald-500", hover: "hover:border-emerald-400/50" },
+    { icon: MessagesSquare, step: "04 • Team", title: "Business to Code", detail: "Requirements, training, documentation", accent: "text-amber-500", hover: "hover:border-amber-400/50" },
   ];
 
   const contactEmail = profile.contactEmail || "chanapha.tanathon@gmail.com";
@@ -227,19 +221,22 @@ export function PublicHero({
                 </div>
               </div>
 
-              {/* Evidence in numbers */}
+              {/* Strengths */}
               <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800/80 grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {stats.map(({ icon: Icon, value, label, accent }) => (
+                {strengths.map(({ icon: Icon, step, title, detail, accent, hover }) => (
                   <div
-                    key={label}
-                    className="p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80"
+                    key={title}
+                    className={`p-3 rounded-xl bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200/80 dark:border-zinc-800/80 ${hover} transition-colors`}
                   >
-                    <Icon className={`size-4 shrink-0 ${accent}`} />
-                    <div className="text-2xl font-extrabold text-zinc-900 dark:text-zinc-100 mt-1.5 font-heading leading-none">
-                      {value}
+                    <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                      <Icon className={`size-3.5 shrink-0 ${accent}`} />
+                      <span>{step}</span>
                     </div>
-                    <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-1 leading-snug">
-                      {label}
+                    <div className="text-sm font-bold text-zinc-900 dark:text-zinc-100 mt-1 font-heading">
+                      {title}
+                    </div>
+                    <div className="text-[11px] font-mono text-zinc-500 dark:text-zinc-400 mt-0.5 leading-snug">
+                      {detail}
                     </div>
                   </div>
                 ))}
