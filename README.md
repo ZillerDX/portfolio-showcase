@@ -189,7 +189,7 @@ This application is built with **Next.js 14 App Router** and **Prisma SQLite**, 
 ## 👤 Author & Architecture
 
 **Tanathon Chanapha**  
-*Software Engineer | .NET · Angular · React | AI Integration*  
+*Software Engineer | AI Integration*  
 - **Email**: [chanapha.tanathon@gmail.com](mailto:chanapha.tanathon@gmail.com)  
 - **GitHub**: [@ZillerDX](https://github.com/ZillerDX)  
 - **LinkedIn**: [Tanathon Chanapha](https://www.linkedin.com/in/tanathon-chanapha-452177427)  
