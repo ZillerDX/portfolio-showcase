@@ -6,7 +6,7 @@ async function test() {
   const r1 = await fetch(`${base}/`);
   console.log(`1. GET / -> Status: ${r1.status}`);
   const html = await r1.text();
-  console.log(`   Page Title presence: ${html.includes("Alex Chen") ? "PASS" : "FAIL"}`);
+  console.log(`   Page Title presence: ${html.includes("Tanathon Chanapha") ? "PASS" : "FAIL"}`);
 
   // 2. GET /api/categories
   const r2 = await fetch(`${base}/api/categories`);
@@ -22,8 +22,8 @@ async function test() {
   const r4 = await fetch(`${base}/project/apex-financial-analytics`);
   console.log(`4. GET /project/apex-financial-analytics -> Status: ${r4.status}`);
 
-  // 5. GET /uploads/documents/apex-whitepaper.pdf
-  const r5 = await fetch(`${base}/uploads/documents/apex-whitepaper.pdf`);
+  // 5. GET /uploads/documents/tanathon-chanapha-resume.pdf
+  const r5 = await fetch(`${base}/uploads/documents/tanathon-chanapha-resume.pdf`);
   console.log(`5. GET PDF file -> Status: ${r5.status}, Type: ${r5.headers.get("content-type")}`);
 
   // 6. Auth fail test

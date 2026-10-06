@@ -67,7 +67,7 @@ export async function PUT(req: NextRequest) {
       },
       create: {
         id: "default",
-        name: body.name || "Alex Chen",
+        name: body.name || "Tanathon Chanapha",
         title: body.title || "Senior Full-Stack Architect",
         bio: body.bio || "",
         avatarUrl: body.avatarUrl || "/uploads/images/avatar.svg",

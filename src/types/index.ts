@@ -35,7 +35,7 @@ export interface ProjectLinkData {
   id?: string;
   label: string;
   url: string;
-  type: "demo" | "github" | "article" | "external";
+  type: "demo" | "live" | "github" | "article" | "external";
 }
 
 export interface ProjectImageData {

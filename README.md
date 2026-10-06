@@ -45,7 +45,7 @@ Commercial portfolio builders and generic website templates fail to meet specifi
 
 **Tanathon Chanapha Personal Portfolio Platform** solves these challenges through a unified, instrument-grade personal architectural showcase:
 - **Personal Cataloging (ทำใช้เอง)**: Instant tracking of finished works, prototypes in active development, and enterprise production systems (.NET 10 LTS & modern distributed architectures).
-- **10 Authentic Production Systems**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
+- **11 Deployed Personal Projects**: Directly synchronized with GitHub repositories (`ZillerDX`), featuring high-resolution screenshot galleries, production URLs, and architecture whitepapers.
 - **Dual Synchronized Filter Popovers**: "All Works" category dropdown and dynamic "All Tech Stacks" popover aligned on the same horizontal level, eliminating screen clutter while providing sub-second multi-dimensional filtering.
 - **Glassmorphic Instrument Design**: Built with modern CSS design tokens, custom SVG vector icons, dark/light ambient mesh gradients, and defensive UI UX (zero cumulative layout shifts).
 
@@ -189,7 +189,7 @@ This application is built with **Next.js 14 App Router** and **Prisma SQLite**, 
 ## 👤 Author & Architecture
 
 **Tanathon Chanapha**  
-*Full-Stack & Systems Architect | Software Engineer*  
+*Software Engineer | .NET · Angular · React | AI Integration*  
 - **Email**: [chanapha.tanathon@gmail.com](mailto:chanapha.tanathon@gmail.com)  
 - **GitHub**: [@ZillerDX](https://github.com/ZillerDX)  
 - **LinkedIn**: [Tanathon Chanapha](https://www.linkedin.com/in/tanathon-chanapha-452177427)  

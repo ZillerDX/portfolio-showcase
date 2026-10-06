@@ -187,7 +187,7 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
                 )}
                 <div className="inline-flex items-center gap-1.5">
                   <Briefcase className="size-3.5 shrink-0 text-emerald-500" />
-                  <span>Principal Systems & Design Architecture</span>
+                  <span>Full-Stack Development · AI Integration</span>
                 </div>
               </div>
 
