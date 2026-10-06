@@ -8,6 +8,7 @@ import {
   Terminal,
   FolderGit2,
   Award,
+  Briefcase,
 } from "lucide-react";
 import { ResumeModal } from "@/components/public/resume-modal";
 
@@ -38,7 +39,7 @@ export function PublicNavbar({
               <span className="text-sm font-bold leading-none font-heading">{name}</span>
             </div>
             <span className="text-[11px] text-zinc-500 dark:text-zinc-400 font-mono tracking-tight mt-0.5">
-              Portfolio & Architecture
+              Software Engineer
             </span>
           </div>
         </Link>
@@ -46,6 +47,13 @@ export function PublicNavbar({
         {/* Right Actions & Navigation */}
         <div className="flex items-center gap-2 sm:gap-3">
           <nav className="hidden md:flex items-center gap-1 text-xs font-medium text-zinc-600 dark:text-zinc-400">
+            <a
+              href="#experience"
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+            >
+              <Briefcase className="size-3.5 shrink-0 text-emerald-500" />
+              <span>Experience</span>
+            </a>
             <a
               href="#projects"
               className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"

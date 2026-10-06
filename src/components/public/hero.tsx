@@ -40,7 +40,7 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
         <div className="relative rounded-3xl border border-zinc-200/90 dark:border-zinc-800/90 bg-white dark:bg-zinc-900/80 overflow-hidden shadow-sm card-hover-glow transition-all duration-300">
           
           {/* Top Decorative Tech Mesh Banner */}
-          <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-gradient-to-r from-slate-950 via-zinc-900 to-indigo-950">
+          <div className="relative h-28 sm:h-48 w-full overflow-hidden bg-gradient-to-r from-slate-950 via-zinc-900 to-indigo-950">
             <img
               src="/uploads/images/profile-banner.svg"
               alt="Profile Cover Banner"
@@ -140,6 +140,7 @@ export function PublicHero({ profile }: { profile: ProfileData }) {
                       className="size-11 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:scale-105 active:scale-95 transition-all flex items-center justify-center"
                     >
                       <JobsdbIcon className="size-4 shrink-0" />
+                      <span className="sr-only">JobsDB profile</span>
                     </a>
                   )}
                 </div>
