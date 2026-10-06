@@ -5,6 +5,7 @@ import { ProfileData, CategoryData, ProjectData, CertificateData } from "@/types
 import { PublicNavbar } from "@/components/public/navbar";
 import { PublicHero } from "@/components/public/hero";
 import { PublicCertificates } from "@/components/public/certificates";
+import { PublicExperience } from "@/components/public/experience";
 import { ProjectFilter } from "@/components/public/project-filter";
 import { ProjectCard } from "@/components/public/project-card";
 import { ProjectDetailModal } from "@/components/public/project-detail-modal";
@@ -131,8 +132,8 @@ export function ShowcaseClient({
       {/* Executive Hero Section */}
       <PublicHero profile={profile} />
 
-      {/* Verified Certifications & Credentials Section */}
-      <PublicCertificates certificates={certificates} />
+      {/* Work Experience */}
+      <PublicExperience />
 
       {/* Main Project Showcase Section */}
       <main id="projects" className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
@@ -167,9 +168,10 @@ export function ShowcaseClient({
         {/* Project Grid */}
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project, index) => (
               <ProjectCard
                 key={project.id}
+                priority={index < 3}
                 project={project}
                 onSelect={(proj) => setActiveProject(proj)}
               />
@@ -202,6 +204,9 @@ export function ShowcaseClient({
         )}
       </main>
 
+      {/* Verified Certifications & Credentials Section */}
+      <PublicCertificates certificates={certificates} />
+
       {/* Project Detail Modal & PDF Viewer */}
       <ProjectDetailModal
         key={activeProject?.id || "none"}
@@ -224,11 +229,14 @@ export function ShowcaseClient({
                 : "TC"}
             </div>
             <span>
-              &copy; {new Date().getFullYear()} {profile.name}. Portfolio & Architecture.
+              &copy; {new Date().getFullYear()} {profile.name}. Software Engineer Portfolio.
             </span>
           </div>
 
           <div className="flex items-center gap-5">
+            <a href="#experience" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+              Experience
+            </a>
             <a href="#projects" className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
               Showcase
             </a>

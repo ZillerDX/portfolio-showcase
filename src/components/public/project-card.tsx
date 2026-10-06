@@ -12,9 +12,10 @@ import {
 interface ProjectCardProps {
   project: ProjectData;
   onSelect: (project: ProjectData) => void;
+  priority?: boolean;
 }
 
-export function ProjectCard({ project, onSelect }: ProjectCardProps) {
+export function ProjectCard({ project, onSelect, priority = false }: ProjectCardProps) {
   let tags: string[] = [];
   try {
     tags = JSON.parse(project.tagsJson || "[]");
@@ -32,6 +33,8 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
         <img
           src={project.coverImage}
           alt={project.title}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
         />
 
