@@ -130,7 +130,7 @@ export function ShowcaseClient({
       />
 
       {/* Executive Hero Section */}
-      <PublicHero profile={profile} projectCount={initialProjects.length} />
+      <PublicHero profile={profile} />
 
       {/* Work Experience */}
       <PublicExperience />
