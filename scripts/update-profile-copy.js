@@ -7,8 +7,8 @@ async function main() {
   await prisma.profile.update({
     where: { id: "default" },
     data: {
-      title: "Software Engineer | .NET · Angular · React | AI Integration",
-      bio: "Software engineer building full-stack web apps with .NET, Angular, React and TypeScript, and integrating LLM APIs (Gemini) into real workflows. Delivered an internal business app for Krones Australia and led 8 bilingual AI workshops.",
+      title: "Software Engineer | AI Integration",
+      bio: "Software engineer who builds end-to-end platforms, from database design and APIs to responsive front ends and AI-powered features. Proficient in .NET, React, Python and SQL, with hands-on experience in Angular, TypeScript, Docker and real-time systems.",
       availabilityText: "Available for full-time Software Engineer / AI Engineer roles",
     },
   });
