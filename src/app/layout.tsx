@@ -18,8 +18,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Tanathon Chanapha — Full-Stack & Systems Architect",
-  description: "Personal portfolio and engineering showcase featuring enterprise platforms, intelligent warehouse systems, AI workflows, and digital twins.",
+  title: "Tanathon Chanapha — Software Engineer (.NET, Angular, React, AI)",
+  description: "Portfolio of Tanathon Chanapha, a software engineer building full-stack web apps with .NET, Angular and React, and integrating LLM APIs into real workflows.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },

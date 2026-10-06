@@ -232,7 +232,7 @@ export default function AdminProfilePage() {
             <Input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Alex Chen"
+              placeholder="Your name"
               required
             />
           </div>

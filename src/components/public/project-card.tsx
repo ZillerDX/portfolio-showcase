@@ -104,13 +104,14 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={link.label}
-                    className="p-2 rounded-lg text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs font-medium text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                   >
                     <Github className="size-4 shrink-0" />
+                    <span>Code</span>
                   </a>
                 );
               }
-              if (link.type === "demo") {
+              if (link.type === "demo" || link.type === "live") {
                 return (
                   <a
                     key={idx}
@@ -118,9 +119,10 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={link.label}
-                    className="p-2 rounded-lg text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs font-medium text-zinc-500 hover:text-blue-600 dark:text-zinc-400 dark:hover:text-blue-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
                   >
                     <ExternalLink className="size-4 shrink-0" />
+                    <span>Demo</span>
                   </a>
                 );
               }
