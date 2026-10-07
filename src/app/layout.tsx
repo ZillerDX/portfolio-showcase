@@ -18,7 +18,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Tanathon Chanapha — Software Engineer (.NET, Angular, React, AI)",
+  title: "Tanathon Chanapha — Full Stack Developer (.NET, Angular, React, AI)",
   description: "Portfolio of Tanathon Chanapha, a software engineer building full-stack web apps with .NET, Angular and React, and integrating LLM APIs into real workflows.",
   icons: {
     icon: [

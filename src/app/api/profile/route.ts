@@ -12,7 +12,7 @@ export async function GET() {
       return NextResponse.json({
         id: "default",
         name: "Tanathon Chanapha",
-        title: "Full-Stack & Systems Architect | Software Engineer",
+        title: "Full Stack Developer | AI Integration",
         bio: "Engineering high-performance enterprise systems, autonomous AI agents, digital twin platforms, and modern web architectures with disciplined software craft.",
         avatarUrl: "/uploads/images/avatar.png",
         resumePdfUrl: "/uploads/documents/tanathon-chanapha-resume.pdf",
