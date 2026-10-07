@@ -1,0 +1,133 @@
+// One entry per project. Content must come from the project's README / real screenshots only (no invented numbers).
+const light = (accent, glowA, glowB, extra = {}) => ({
+  bg: ["#fbf9f6", "#f1ece4"], glow: [glowA, glowB], ink: "#1f2430", muted: "#5d6573", accent, card: "#ffffff", line: "#e3ddd2",
+  tagbg: "#e3f1e8", tagfg: "#256a43", bar: "#eee8dd", dot: "#d6cdbd", head: "'Plus Jakarta Sans','Inter',sans-serif", ...extra,
+});
+const dark = (accent, glowA, glowB, extra = {}) => ({
+  bg: ["#0a0f1f", "#141a36"], glow: [glowA, glowB], ink: "#f1f5f9", muted: "#a3aec4", accent, card: "#141b30", line: "#2a3352",
+  tagbg: "rgba(52,211,153,.16)", tagfg: "#6ee7b7", bar: "#1a2340", dot: "#34406a", head: "'Space Grotesk','Inter',sans-serif", gridOpacity: 0.35, ...extra,
+});
+
+// Two browser frames (back + front) and one floating fact card: the default composition.
+const twoFrames = (front, back, float, extra = {}) => ({
+  shots: [
+    { src: back, device: "browser", style: { left: 120, top: 120, width: 760, rot: 3, z: 1 } },
+    { src: front, device: "browser", style: { left: 10, top: 250, width: 800, rot: -2.4, z: 2 } },
+  ],
+  floats: [{ ...float, style: { left: -40, top: 640, rot: -2, z: 5 } }],
+  ...extra,
+});
+
+module.exports = [
+  {
+    slug: "queueflow",
+    theme: light("#2563eb", "rgba(37,99,235,.16)", "rgba(125,211,252,.30)"),
+    brand: { name: "QueueFlow", icon: '<path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/>' },
+    eyebrow: "Real-time queue management",
+    headline: ["Every customer sees their turn, ", "live."],
+    h1Size: 80,
+    mock: { kind: "pills", items: ["Customers take a ticket on their phone", "Staff call the next number at the desk", "A TV display shows who is up"] },
+    ...twoFrames("tv-display.png", "admin-management.png", { k: "Call next", v: "SKIP LOCKED", tag: "Atomic, no double-serving" }),
+  },
+  {
+    slug: "deskflow",
+    theme: light("#4f46e5", "rgba(79,70,229,.16)", "rgba(196,181,253,.34)"),
+    brand: { name: "DeskFlow Rooms", icon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/>' },
+    eyebrow: "Meeting rooms for hybrid teams",
+    headline: ["Book a room. Everyone's RSVP updates ", "instantly."],
+    h1Size: 72,
+    mock: { kind: "pills", items: ["Reserve rooms across floors", "Invitees accept or decline in one tap", "Attendance syncs live over WebSockets"] },
+    ...twoFrames("overview.png", "employee-view.png", { k: "Live sync", v: "SignalR", tag: ".NET 10 + Angular 21" }),
+  },
+  {
+    slug: "equiplend",
+    theme: light("#0d9488", "rgba(13,148,136,.16)", "rgba(153,246,228,.30)"),
+    brand: { name: "EquipLend", icon: '<path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>' },
+    eyebrow: "Internal IT asset checkout",
+    headline: ["Borrow a device in seconds. ", "Know who has it."],
+    h1Size: 64,
+    mock: { kind: "pills", items: ["Browse a live catalog with availability", "Returns go back to IT for inspection", "Waitlist alerts when a device is back"] },
+    ...twoFrames("hero-preview.webp", "admin-preview.webp", { k: "Audit trail", v: "Tamper-evident", vSize: 40, tag: "IT admin only" }),
+  },
+  {
+    slug: "jodnoi",
+    theme: light("#e8710a", "rgba(232,113,10,.18)", "rgba(253,224,171,.45)"),
+    brand: { name: "Jodnoi", icon: '<path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5"/>' },
+    eyebrow: "Offline-first personal finance",
+    headline: ["Log every baht in ", "3 taps."],
+    h1Size: 88,
+    chips: ["Works offline", "No sign-up", "Data stays on your device", "Installable PWA"],
+    chipsWidth: 640,
+    shots: [
+      { src: "mobile-home.png", device: "phone", style: { left: 60, top: 150, width: 340, rot: -4, z: 2 } },
+      { src: "quick-add.png", device: "phone", style: { left: 440, top: 190, width: 340, rot: 4, z: 1 } },
+    ],
+    floats: [{ k: "Stored in", v: "IndexedDB", tag: "No backend, no analytics", style: { left: 250, top: 660, rot: -2, z: 6 } }],
+  },
+  {
+    slug: "optitrack-wms",
+    theme: dark("#22d3ee", "rgba(34,211,238,.16)", "rgba(99,102,241,.22)"),
+    brand: { name: "OptiTrack WMS", icon: '<path d="M3 21V9l9-6 9 6v12"/><path d="M8 21v-7h8v7"/>' },
+    eyebrow: "Intelligent warehouse management",
+    headline: ["Run the warehouse from one ", "command center."],
+    h1Size: 76,
+    mock: { kind: "pills", items: ["Live zone capacity and inventory ledger", "AI copilot with 7-day stockout forecasts", "One-click draft purchase orders"] },
+    ...twoFrames("dashboard_showcase.webp", "inventory_showcase.webp", { k: "AI copilot", v: "Draft POs", tag: "Gemini, Groq + fallback" }),
+  },
+  {
+    slug: "ai-document-workflow",
+    theme: dark("#a78bfa", "rgba(139,92,246,.20)", "rgba(56,189,248,.16)"),
+    brand: { name: "AegisFlow AI", icon: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>' },
+    eyebrow: "Document workflow with audit proof",
+    headline: ["Approvals nobody can ", "quietly change."],
+    h1Size: 80,
+    mock: { kind: "pills", items: ["Segregation of duties by role", "Gemini OCR flags tax mismatches", "SHA-256 hash-chained audit ledger"] },
+    ...twoFrames("hero_dashboard_enterprise.webp", "document_detail_tax_anomaly.webp", { k: "Audit ledger", v: "SHA-256", tag: "Verify chain integrity" }),
+  },
+  {
+    slug: "math-generative-art-studio",
+    theme: dark("#f472b6", "rgba(244,114,182,.18)", "rgba(251,146,60,.16)"),
+    brand: { name: "Axiom", icon: '<path d="M18 5H6l6 7-6 7h12"/>' },
+    eyebrow: "Generative math and art studio",
+    headline: ["Mathematics, rendered on the ", "GPU."],
+    h1Size: 80,
+    chips: ["WebGL2", "GLSL shaders", "KaTeX equations", "Shareable state, no database"],
+    chipsWidth: 640,
+    ...twoFrames("studio_en.webp", "math_suggestions.webp", { k: "Runs in", v: "Real time", tag: "Formula to shader" }),
+  },
+  {
+    slug: "ml-model-playground",
+    theme: dark("#2dd4bf", "rgba(45,212,191,.16)", "rgba(129,140,248,.20)"),
+    brand: { name: "ML Playground", icon: '<path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2l-6-10V3"/>' },
+    eyebrow: "In-browser machine learning lab",
+    headline: ["Watch machine learning ", "learn."],
+    h1Size: 84,
+    mock: { kind: "pills", items: ["Gradient descent on a loss surface", "Neural-net decision boundaries", "K-means, one Lloyd step at a time"] },
+    ...twoFrames("hero_regression_light.webp", "classification_trained.webp", { k: "100% in browser", v: "TensorFlow.js", tag: "No Python runtime" }),
+  },
+  {
+    slug: "globepass-visa",
+    theme: light("#0284c7", "rgba(2,132,199,.16)", "rgba(125,211,252,.34)"),
+    brand: { name: "GlobePass", icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>' },
+    eyebrow: "Visa and consular intelligence",
+    headline: ["Know the visa rules before you ", "book."],
+    h1Size: 80,
+    mock: { kind: "pills", items: ["Pick your passport and destination", "Stay limits, fees and processing times", "Bilingual TH / EN, works if the AI is down"] },
+    ...twoFrames("hero-preview.webp", "visa-intelligence-result.webp", { k: "AI synthesis", v: "Gemini", tag: "With offline fallback" }),
+  },
+  {
+    slug: "qr-menu-easy-order",
+    theme: light("#c2410c", "rgba(194,65,12,.15)", "rgba(253,186,116,.40)"),
+    brand: { name: "Cafe Order", icon: '<path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2M7 2v3M11 2v3"/>' },
+    eyebrow: "QR menu and kitchen display",
+    headline: ["Scan, order, and the kitchen sees it ", "live."],
+    h1Size: 72,
+    chips: ["Zero install", "Kitchen display", "Printable table QR", "Sales analytics"],
+    chipsWidth: 600,
+    shots: [
+      { src: "02-kitchen-display-system.png", device: "browser", style: { left: 90, top: 150, width: 760, rot: 3, z: 1 } },
+      { src: "01-customer-mobile-menu.webp", device: "phone", imgStyle: "height:640px; object-fit:cover; object-position:top;", style: { left: 20, top: 250, width: 280, rot: -4, z: 3 } },
+    ],
+    floats: [{ k: "Tests", v: "64", small: "passed", tag: "13 suites", style: { left: 500, top: 650, rot: 2, z: 6 } }],
+  },
+];
