@@ -7,7 +7,7 @@ async function main() {
   await prisma.profile.update({
     where: { id: "default" },
     data: {
-      title: "Software Engineer | AI Integration",
+      title: "Full Stack Developer | AI Integration",
       bio: "Software engineer who builds end-to-end platforms, from database design and APIs to responsive front ends and AI-powered features. Proficient in .NET, React, Python and SQL, with hands-on experience in Angular, TypeScript, Docker and real-time systems.",
       availabilityText: "Available for full-time Software Engineer / AI Engineer roles",
     },

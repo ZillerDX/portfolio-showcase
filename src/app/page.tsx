@@ -7,7 +7,7 @@ export const revalidate = 60;
 const fallbackProfile: ProfileData = {
   id: "default",
   name: "Tanathon Chanapha",
-  title: "Software Engineer | AI Integration",
+  title: "Full Stack Developer | AI Integration",
   bio: "Software engineer who builds end-to-end platforms, from database design and APIs to responsive front ends and AI-powered features. Proficient in .NET, React, Python and SQL, with hands-on experience in Angular, TypeScript, Docker and real-time systems.",
   avatarUrl: "/uploads/images/avatar.png",
   resumePdfUrl: "/uploads/documents/tanathon-chanapha-resume.pdf",

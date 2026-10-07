@@ -229,7 +229,7 @@ export function ShowcaseClient({
                 : "TC"}
             </div>
             <span>
-              &copy; {new Date().getFullYear()} {profile.name}. Software Engineer Portfolio.
+              &copy; {new Date().getFullYear()} {profile.name}. Full Stack Developer Portfolio.
             </span>
           </div>
 

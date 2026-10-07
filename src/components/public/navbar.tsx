@@ -39,7 +39,7 @@ export function PublicNavbar({
               <span className="text-sm font-bold leading-none font-heading">{name}</span>
             </div>
             <span className="text-[11px] text-zinc-500 dark:text-zinc-400 font-mono tracking-tight mt-0.5">
-              Software Engineer
+              Full Stack Developer
             </span>
           </div>
         </Link>
