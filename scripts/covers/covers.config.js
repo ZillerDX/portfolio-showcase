@@ -76,13 +76,13 @@ module.exports = [
   },
   {
     slug: "ai-document-workflow",
-    theme: dark("#a78bfa", "rgba(139,92,246,.20)", "rgba(56,189,248,.16)"),
+    theme: light("#0f766e", "rgba(15,118,110,.16)", "rgba(153,246,228,.34)"),
     brand: { name: "AegisFlow AI", icon: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>' },
     eyebrow: "Document workflow with audit proof",
     headline: ["Approvals nobody can ", "quietly change."],
     h1Size: 80,
-    mock: { kind: "pills", items: ["Segregation of duties by role", "Gemini OCR flags tax mismatches", "SHA-256 hash-chained audit ledger"] },
-    ...twoFrames("hero_dashboard_enterprise.webp", "document_detail_tax_anomaly.webp", { k: "Audit ledger", v: "SHA-256", tag: "Verify chain integrity" }),
+    mock: { kind: "pills", items: ["Manager first, then finance: two-level approval", "Gemini flags tax mismatches", "SHA-256 hash-chained audit ledger"] },
+    ...twoFrames("inbox.webp", "sod.webp", { k: "Rules enforced by", v: "The API", vSize: 46, tag: "The UI is a convenience" }),
   },
   {
     slug: "math-generative-art-studio",
